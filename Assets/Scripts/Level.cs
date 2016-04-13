@@ -14,7 +14,7 @@ public class Level : MonoBehaviour {
 	}
 
 	public float GetSpeed() {
-		return 10;
+		return 3;
 	}
 
 	public bool IsWord() {
@@ -31,10 +31,10 @@ public class Level : MonoBehaviour {
 	}
 
 	public void Right() {
-
+		Debug.Log("R!");
 	}
 
 	public void Wrong() {
-
+		Debug.Log("W!");
 	}
 }

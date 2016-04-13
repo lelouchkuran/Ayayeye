@@ -18,14 +18,14 @@ public class CubeGenerator : MonoBehaviour {
 	void Awake () {
 		arrow_rotations = new Vector3[4];
 		arrow_rotations[0] = Vector3.zero;
-		arrow_rotations[1] = new Vector3(0, 0, -90);
-		arrow_rotations[2] = new Vector3(0, 0, 90);
+		arrow_rotations[1] = new Vector3(0, 0, 90);
+		arrow_rotations[2] = new Vector3(0, 0, -90);
 		arrow_rotations[3] = new Vector3(0, 0, 180);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		GameObject.Find ("a").GetComponent<CubeBehavior> ().SetInfo (1, 1, true);
+
 	}
 
 	public void SetMoving(bool _moving = true) {
@@ -41,6 +41,7 @@ public class CubeGenerator : MonoBehaviour {
 	}
 
 	public void Generate() {
+		Debug.Log(gameObject.name + " generate!");
 		int dir = GetDirection (), show_dir = dir;
 		bool is_word = no_words ? false : level.IsWord ();
 		bool is_oppo = level.IsOppo ();
@@ -56,11 +57,22 @@ public class CubeGenerator : MonoBehaviour {
 				cube = Instantiate (Constant.Instance.DirPrefab [show_dir - 1]);
 			} else {
 				cube = Instantiate (Constant.Instance.ArrowPrefab);
-				cube.transform.localRotation = Quaternion.Euler(arrow_rotations[show_dir - 1]);
 			}
+		}
+		cube.transform.parent = transform;
+		if (dir > 0 && is_word == false) {
+			cube.transform.localRotation = Quaternion.Euler (arrow_rotations [show_dir - 1]);
+		} else {
+			cube.transform.localRotation = Quaternion.identity;
 		}
 		cube.transform.localPosition = Vector3.forward * Constant.Instance.CubeGenerateDis;
 		cube.GetComponent<CubeBehavior> ().SetInfo (dir, show_dir, is_word);
+
+		if (is_oppo && dir > 0) {
+			cube.GetComponent<CubeBehavior> ().SetColor (Constant.Instance.OpposiColor);
+		} else {
+			cube.GetComponent<CubeBehavior> ().SetColor (Constant.Instance.NormalColor);
+		}
 	}
 
 	int GetDirection() {

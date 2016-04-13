@@ -6,6 +6,8 @@ public class Constant : Singleton<Constant> {
 	public float CubeMissDis;
 
 	public float AngleTurn;
+	public Color NormalColor;
+	public Color OpposiColor;
 
 	#region prefabs
 	public GameObject ArrowPrefab;

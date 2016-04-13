@@ -3,19 +3,20 @@ using System.Collections;
 
 public class CubeBehavior : MonoBehaviour {
 	protected float speed = 0;
-	protected int dir, dir_show;
+	public int dir, dir_show;
 
 	bool flag_word;
 	// Use this for initialization
 	void Awake () {
  		speed = GameObject.Find ("Level").GetComponent<Level> ().GetSpeed ();
+		transform.localPosition = Vector3.forward * Constant.Instance.CubeGenerateDis;
 	}
 	
 	// Update is called once per frame
 	public void Update () {
-		transform.localPosition -= Vector3.back * speed * Time.deltaTime;
+		transform.localPosition += Vector3.back * speed * Time.deltaTime;
 		if (transform.localPosition.z < Constant.Instance.CubeMissDis) {
-			GameObject.Find("player").GetComponent<Player>().Miss();
+			GameObject.Find("Player").GetComponent<Player>().Miss();
 			Miss();
 		}
 	}
@@ -40,10 +41,21 @@ public class CubeBehavior : MonoBehaviour {
 			// wrong cube effect
 
 		}
+
 		Destroy (gameObject);
+		Debug.Log("Win?");
 	}
 
 	public int GetDir() {
 		return dir;
+	}
+
+	public void SetColor(Color c) {
+		foreach (Transform son in transform) {
+			Renderer rend = son.gameObject.GetComponent<Renderer>();
+			if (rend != null) {
+				rend.material.color = c;
+			}
+		}
 	}
 }
