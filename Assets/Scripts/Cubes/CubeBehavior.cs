@@ -42,4 +42,8 @@ public class CubeBehavior : MonoBehaviour {
 		}
 		Destroy (gameObject);
 	}
+
+	public int GetDir() {
+		return dir;
+	}
 }

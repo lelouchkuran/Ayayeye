@@ -5,6 +5,8 @@ public class Constant : Singleton<Constant> {
 	public float CubeGenerateDis;
 	public float CubeMissDis;
 
+	public float AngleTurn;
+
 	#region prefabs
 	public GameObject ArrowPrefab;
 	public GameObject[] DirPrefab;

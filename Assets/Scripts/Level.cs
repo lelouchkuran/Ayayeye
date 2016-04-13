@@ -29,4 +29,12 @@ public class Level : MonoBehaviour {
 		// 0 no voer, 1 all cover, 2 line cover -, 3 line cover |
 		return Random.Range (0, 3);
 	}
+
+	public void Right() {
+
+	}
+
+	public void Wrong() {
+
+	}
 }
