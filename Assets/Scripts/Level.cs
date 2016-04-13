@@ -16,4 +16,12 @@ public class Level : MonoBehaviour {
 	public float GetSpeed() {
 		return 10;
 	}
+
+	public bool IsWord() {
+
+	}
+
+	public bool IsOppo() {
+
+	}
 }

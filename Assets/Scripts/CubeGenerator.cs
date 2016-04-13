@@ -5,13 +5,24 @@ public class CubeGenerator : MonoBehaviour {
 	public GameObject neighborUp, neighborDown, neighborLeft, neighborRight;
 	public UseLessCubeDirection[] GenerateList;
 
+	public GameObject ArrowPrefab;
+	Vector3[] arrow_rotations;
+	public GameObject[] DirPrefab;
+	public GameObject[] ShapePrefab;
+
+	public Level level;
+
 	GameObject cube = null;
 	int generatr_pointer = 0;
 	bool moving = false;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Awake () {
+		arrow_rotations = new Vector3[4];
+		arrow_rotations[0] = Vector3.zero;
+		arrow_rotations[1] = new Vector3(0, 0, -90);
+		arrow_rotations[2] = new Vector3(0, 0, 90);
+		arrow_rotations[3] = new Vector3(0, 0, 180);
 	}
 	
 	// Update is called once per frame
@@ -33,7 +44,21 @@ public class CubeGenerator : MonoBehaviour {
 
 	void Generate() {
 		int dir = GetDirection ();
+		bool is_word = level.IsWord ();
+		bool is_oppo = level.IsOppo ();
 
+		if (dir == 0) {
+			cube = Instantiate (ShapePrefab [Random.Range (0, 4)]);
+		} else {
+			int show_dir = is_oppo ? Directions.GetOpposite(dir) : dir;
+			if (is_word) {
+				cube = Instantiate (DirPrefab [show_dir - 1]);
+			} else {
+				cube = Instantiate (ArrowPrefab);
+				cube.transform.localRotation = Quaternion.Euler(arrow_rotations[show_dir - 1]);
+			}
+		}
+		cube.transform.localPosition = Vector3.forward * Constant.Instance.CubeGenerateDis;
 	}
 
 	int GetDirection() {
