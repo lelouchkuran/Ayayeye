@@ -43,7 +43,6 @@ public class CubeBehavior : MonoBehaviour {
 		}
 
 		Destroy (gameObject);
-		Debug.Log("Win?");
 	}
 
 	public int GetDir() {

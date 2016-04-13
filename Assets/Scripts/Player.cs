@@ -30,8 +30,6 @@ public class Player : MonoBehaviour {
 		float angle_now = Vector3.Angle (FacingPoint.transform.position, generator_now.gameObject.transform.position);
 		float angle_next = Vector3.Angle (FacingPoint.transform.position, target.transform.position);
 
-		// Debug.Log ("angle now:" + angle_now + ", angle next:" + angle_next);
-
 		if (angle_next < Constant.Instance.AngleTurn || (angle_now > 90 - Constant.Instance.AngleTurn)) {
 			Right ();
 		} else {
@@ -46,8 +44,8 @@ public class Player : MonoBehaviour {
 	public void Miss() {
 		level.Wrong ();
 		// wrong people effect
-
 		NSwitch ();
+		// miss people effect
 	}
 
 	public void Right() {

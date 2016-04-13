@@ -9,6 +9,9 @@ public class Constant : Singleton<Constant> {
 	public Color NormalColor;
 	public Color OpposiColor;
 
+    public float CoverStepL = 0.15f;
+    public float CoverCD = 1.0f;
+
 	#region prefabs
 	public GameObject ArrowPrefab;
 	public GameObject[] DirPrefab;

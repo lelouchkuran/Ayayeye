@@ -3,15 +3,15 @@ using System.Collections;
 
 public class Level : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public delegate void LevelInHandler ();
+    public delegate void LevelOutHandler ();
+    public event LevelInHandler LevelIn;
+    public event LevelOutHandler LevelOut;
+
+    // Use this for initialization
+    void Start () {
+
+    }
 
 	public float GetSpeed() {
 		return 3;
@@ -37,4 +37,14 @@ public class Level : MonoBehaviour {
 	public void Wrong() {
 		Debug.Log("W!");
 	}
+
+    // TODO
+    public void TransLevel () {
+        if (LevelOut != null)
+            LevelOut();
+        // TODO
+        if (LevelIn != null)
+            LevelIn();
+    }
+
 }

@@ -4,6 +4,7 @@ using System.Collections;
 public class CubeGenerator : MonoBehaviour {
 	public bool no_words;
 	public GameObject[] neighbors;
+
 	public UseLessCubeDirection[] GenerateList;
 
 	Vector3[] arrow_rotations;
@@ -30,7 +31,6 @@ public class CubeGenerator : MonoBehaviour {
 
 	public void SetMoving(bool _moving = true) {
 		if (_moving == false && cube != null) {
-			Debug.Log("set moving false will cube still in!!");
 			Destroy(cube);
 		}
 		moving = _moving;
@@ -41,7 +41,7 @@ public class CubeGenerator : MonoBehaviour {
 	}
 
 	public void Generate() {
-		Debug.Log(gameObject.name + " generate!");
+// 		Debug.Log(gameObject.name + " generate!");
 		int dir = GetDirection (), show_dir = dir;
 		bool is_word = no_words ? false : level.IsWord ();
 		bool is_oppo = level.IsOppo ();
