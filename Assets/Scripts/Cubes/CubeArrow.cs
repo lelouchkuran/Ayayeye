@@ -14,11 +14,11 @@ public class CubeArrow : CubeBehavior {
 
         if (cover_shape > 0) {
             // generate cover in cover_shape
-            Instantiate(cover_prefab);
-            cover_prefab.transform.parent = transform;
-            cover_prefab.transform.localPosition = new Vector3(0, 0);
-            cover_prefab.transform.localRotation = Quaternion.identity;
-            BlockBehavior cover = cover_prefab.GetComponent<BlockBehavior>() ?? null;
+            GameObject cover_ins = Instantiate(cover_prefab);
+            cover_ins.transform.parent = transform;
+            cover_ins.transform.localPosition = new Vector3(0, 0);
+            cover_ins.transform.localRotation = Quaternion.identity;
+            BlockBehavior cover = cover_ins.GetComponent<BlockBehavior>() ?? null;
             if (cover) {
                 switch (cover_shape) {
                     case 1:

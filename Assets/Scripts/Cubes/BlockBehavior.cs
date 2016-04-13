@@ -2,23 +2,20 @@
 using System.Collections;
 using System.Collections.Generic;
 
-struct Block {
+class Block {
     public int id;
     public GameObject button;
 };
 
 public class BlockBehavior : MonoBehaviour {
     public GameObject[] models;
-    static float timestamp;
+    static float timestamp, step, cd;
     Queue<Block>[] queues;
     bool initialized = false;
-    float step, cd;
 
     void Start () {
-        Constant constant = Constant.Instance;
-        step = constant.CoverStepL;
-        cd = constant.CoverCD;
-        // OnBirth(3, 3, 2);
+        step = Constant.Instance.CoverStepL;
+        cd = Constant.Instance.CoverCD;
     }
 
     // Update is called once per frame
@@ -45,8 +42,8 @@ public class BlockBehavior : MonoBehaviour {
                     Vector3 pos = new Vector3(step * (i - col * 0.5f), step * (j - row * 0.5f), step * k * .5f);
                     Block block = new Block();
                     block.id = index;
-                    block.button = Instantiate(models[index]);
-                    block.button.transform.parent = transform;
+                    block.button = (GameObject)Instantiate(models[index], transform.position, transform.rotation);
+                    block.button.transform.parent = gameObject.transform;
                     block.button.transform.localPosition = pos;
                     queues[i + j * col].Enqueue(block);
                 }
@@ -83,7 +80,7 @@ public class BlockBehavior : MonoBehaviour {
         }
     }
 
-    void DestroyBlock(Block block) {
+    void DestroyBlock (Block block) {
         Destroy(block.button);
         block.id = -1;
     }

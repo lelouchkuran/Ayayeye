@@ -52,9 +52,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100748}
-  m_LocalRotation: {x: -.500000119, y: .5, z: -.5, w: .49999994}
+  m_LocalRotation: {x: -0.5000001, y: 0.5, z: -0.5, w: 0.49999994}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6.6056881, y: 6.60568762, z: 6.60568762}
+  m_LocalScale: {x: 6.605688, y: 6.6056876, z: 6.6056876}
   m_Children: []
   m_Father: {fileID: 427502}
   m_RootOrder: 0
@@ -76,8 +76,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -100,6 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 315eb33901a65cf4bae8d4b049de7a48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dir: 0
+  dir_show: 0
+  cover_prefab: {fileID: 179138, guid: 2e2ba5fecfed6a042aa3d4f323941a5b, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
