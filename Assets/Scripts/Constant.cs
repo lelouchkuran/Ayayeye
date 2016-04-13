@@ -4,6 +4,13 @@ using System.Collections;
 public class Constant : Singleton<Constant> {
 	public float CubeGenerateDis;
 	public float CubeMissDis;
+
+	#region prefabs
+	public GameObject ArrowPrefab;
+	public GameObject[] DirPrefab;
+	public GameObject[] ShapePrefab;
+	public KeyCode[] KeyMap;
+	#endregion
 }
 
 [System.Serializable]

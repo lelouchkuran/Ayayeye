@@ -5,10 +5,7 @@ public class CubeGenerator : MonoBehaviour {
 	public GameObject neighborUp, neighborDown, neighborLeft, neighborRight;
 	public UseLessCubeDirection[] GenerateList;
 
-	public GameObject ArrowPrefab;
 	Vector3[] arrow_rotations;
-	public GameObject[] DirPrefab;
-	public GameObject[] ShapePrefab;
 
 	public Level level;
 
@@ -27,7 +24,7 @@ public class CubeGenerator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		GameObject.Find ("a").GetComponent<CubeBehavior> ().SetInfo (1, 1, true);
 	}
 
 	public void SetMoving(bool _moving = true) {
@@ -42,23 +39,27 @@ public class CubeGenerator : MonoBehaviour {
 		}
 	}
 
-	void Generate() {
-		int dir = GetDirection ();
+	public void Generate() {
+		int dir = GetDirection (), show_dir = dir;
 		bool is_word = level.IsWord ();
 		bool is_oppo = level.IsOppo ();
 
 		if (dir == 0) {
-			cube = Instantiate (ShapePrefab [Random.Range (0, 4)]);
+			show_dir = Random.Range (0, 4);
+			cube = Instantiate (Constant.Instance.ShapePrefab [show_dir]);
 		} else {
-			int show_dir = is_oppo ? Directions.GetOpposite(dir) : dir;
+			if (is_oppo) {
+				show_dir = Directions.GetOpposite(dir);
+			}
 			if (is_word) {
-				cube = Instantiate (DirPrefab [show_dir - 1]);
+				cube = Instantiate (Constant.Instance.DirPrefab [show_dir - 1]);
 			} else {
-				cube = Instantiate (ArrowPrefab);
+				cube = Instantiate (Constant.Instance.ArrowPrefab);
 				cube.transform.localRotation = Quaternion.Euler(arrow_rotations[show_dir - 1]);
 			}
 		}
 		cube.transform.localPosition = Vector3.forward * Constant.Instance.CubeGenerateDis;
+		cube.GetComponent<CubeBehavior> ().SetInfo (dir, show_dir, is_word);
 	}
 
 	int GetDirection() {
