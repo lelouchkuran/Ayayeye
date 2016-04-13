@@ -9,8 +9,10 @@ public class Constant : Singleton<Constant> {
 	public Color NormalColor;
 	public Color OpposiColor;
 
-    public float CoverStepL = 0.15f;
+    public float CoverStepL = 0.3f;
     public float CoverCD = 1.0f;
+    public float CoverOffset = -0.5f;
+    public float CoverScale = 5.0f;
 
 	#region prefabs
 	public GameObject ArrowPrefab;

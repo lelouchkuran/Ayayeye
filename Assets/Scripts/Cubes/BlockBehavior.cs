@@ -9,42 +9,41 @@ class Block {
 
 public class BlockBehavior : MonoBehaviour {
     public GameObject[] models;
-    static float timestamp, step, cd;
+    static float timestamp, step, cd, scale, thick;
+    static KeyCode[] keymap;
     Queue<Block>[] queues;
     bool initialized = false;
-
-    void Start () {
-        step = Constant.Instance.CoverStepL;
-        cd = Constant.Instance.CoverCD;
-    }
 
     // Update is called once per frame
     void Update () {
         if (initialized) {
-            if (Input.GetKeyDown(KeyCode.Joystick1Button0))
-                OnButtonPress(0);
-            if (Input.GetKeyDown(KeyCode.Joystick1Button1))
-                OnButtonPress(1);
-            if (Input.GetKeyDown(KeyCode.Joystick1Button2))
-                OnButtonPress(2);
-            if (Input.GetKeyDown(KeyCode.Joystick1Button3))
-                OnButtonPress(3);
+            for(int i = 0; i < keymap.Length; ++i) {
+                if (Input.GetKeyDown(keymap[i]))
+                    OnButtonPress(i);
+            }
         }
     }
 
     public void OnBirth (int row, int col, int num_layer) {
+        step = Constant.Instance.CoverStepL;
+        cd = Constant.Instance.CoverCD;
+        scale = Constant.Instance.CoverScale;
+        thick = Constant.Instance.CoverOffset;
         queues = new Queue<Block>[row * col];
+        keymap = Constant.Instance.KeyMap;
         for (int i = 0; i < col; ++i) {
             for (int j = 0; j < row; ++j) {
                 queues[i + j * col] = new Queue<Block>();
                 for (int k = 0; k < num_layer; ++k) {
                     int index = Random.Range(0, models.Length - 1);
-                    Vector3 pos = new Vector3(step * (i - col * 0.5f), step * (j - row * 0.5f), step * k * .5f);
                     Block block = new Block();
                     block.id = index;
-                    block.button = (GameObject)Instantiate(models[index], transform.position, transform.rotation);
+                    block.button = Instantiate(models[index]);
                     block.button.transform.parent = gameObject.transform;
-                    block.button.transform.localPosition = pos;
+                    block.button.transform.localRotation = Quaternion.Euler(new Vector3(-90, 0, -transform.parent.localRotation.z));
+                    block.button.transform.localPosition = new Vector3(step * (i - (col - 1) * 0.5f), step * (j - (row - 1) * 0.5f), thick * k);
+                    Debug.Log(block.button.transform.localPosition);
+                    block.button.transform.localScale = new Vector3(scale, scale, scale);
                     queues[i + j * col].Enqueue(block);
                 }
             }

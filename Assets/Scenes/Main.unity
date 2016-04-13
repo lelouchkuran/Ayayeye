@@ -85,6 +85,64 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &15249325
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 459726, guid: 2e2ba5fecfed6a042aa3d4f323941a5b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 459726, guid: 2e2ba5fecfed6a042aa3d4f323941a5b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 459726, guid: 2e2ba5fecfed6a042aa3d4f323941a5b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 459726, guid: 2e2ba5fecfed6a042aa3d4f323941a5b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 459726, guid: 2e2ba5fecfed6a042aa3d4f323941a5b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 459726, guid: 2e2ba5fecfed6a042aa3d4f323941a5b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 459726, guid: 2e2ba5fecfed6a042aa3d4f323941a5b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 459726, guid: 2e2ba5fecfed6a042aa3d4f323941a5b, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11435442, guid: 2e2ba5fecfed6a042aa3d4f323941a5b, type: 2}
+      propertyPath: models.Array.data[0]
+      value: 
+      objectReference: {fileID: 111592, guid: ffd586ccc3810cd4a9b29fcd5038fdc6, type: 2}
+    - target: {fileID: 11435442, guid: 2e2ba5fecfed6a042aa3d4f323941a5b, type: 2}
+      propertyPath: models.Array.data[1]
+      value: 
+      objectReference: {fileID: 103680, guid: 915c4400dbfeded4db4b28a156a40b0d, type: 2}
+    - target: {fileID: 11435442, guid: 2e2ba5fecfed6a042aa3d4f323941a5b, type: 2}
+      propertyPath: models.Array.data[2]
+      value: 
+      objectReference: {fileID: 136550, guid: 22973e7b9ad055d4aa94f5eb8fd7cdee, type: 2}
+    - target: {fileID: 11435442, guid: 2e2ba5fecfed6a042aa3d4f323941a5b, type: 2}
+      propertyPath: models.Array.data[3]
+      value: 
+      objectReference: {fileID: 165004, guid: 575479c5d0b7e0447816e206de8913c0, type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2e2ba5fecfed6a042aa3d4f323941a5b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &95665429
 Prefab:
   m_ObjectHideFlags: 0
@@ -423,8 +481,10 @@ MonoBehaviour:
   AngleTurn: 25
   NormalColor: {r: 0, g: 0, b: 1, a: 1}
   OpposiColor: {r: 1, g: 0, b: 0, a: 1}
-  CoverStepL: 0.15
+  CoverStepL: 0.45
   CoverCD: 1
+  CoverOffset: -0.1
+  CoverScale: 4
   ArrowPrefab: {fileID: 187244, guid: de66b6df6c7dc9948abaa9d778fcf46a, type: 2}
   DirPrefab:
   - {fileID: 167830, guid: 322e4da4e4be64c4c96dbf0177619a83, type: 2}
