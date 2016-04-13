@@ -2,15 +2,14 @@
 using System.Collections;
 
 public class CubeGenerator : MonoBehaviour {
-	public bool no_words;
-	public GameObject[] neighbors;
+	public GameObject neighborUp, neighborDown, neighborLeft, neighborRight;
 	public UseLessCubeDirection[] GenerateList;
 
 	Vector3[] arrow_rotations;
 
 	public Level level;
 
-	public GameObject cube = null;
+	GameObject cube = null;
 	int generatr_pointer = 0;
 	bool moving = false;
 
@@ -42,7 +41,7 @@ public class CubeGenerator : MonoBehaviour {
 
 	public void Generate() {
 		int dir = GetDirection (), show_dir = dir;
-		bool is_word = no_words ? false : level.IsWord ();
+		bool is_word = level.IsWord ();
 		bool is_oppo = level.IsOppo ();
 
 		if (dir == 0) {
