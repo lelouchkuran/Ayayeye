@@ -12,23 +12,25 @@ public class BlockBehavior : MonoBehaviour {
     static float timestamp;
     Queue<Block>[] queues;
     bool initialized = false;
-    const float step = 1.0f;
-    const float cd = 2.0f;
+    float step, cd;
 
     void Start () {
-        OnBirth(2, 3, 2);
+        Constant constant = Constant.Instance;
+        step = constant.CoverStepL;
+        cd = constant.CoverCD;
+        // OnBirth(3, 3, 2);
     }
 
     // Update is called once per frame
     void Update () {
         if (initialized) {
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.Joystick1Button0))
                 OnButtonPress(0);
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.Joystick1Button1))
                 OnButtonPress(1);
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.Joystick1Button2))
                 OnButtonPress(2);
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.Joystick1Button3))
                 OnButtonPress(3);
         }
     }
@@ -40,7 +42,7 @@ public class BlockBehavior : MonoBehaviour {
                 queues[i + j * col] = new Queue<Block>();
                 for (int k = 0; k < num_layer; ++k) {
                     int index = Random.Range(0, models.Length - 1);
-                    Vector3 pos = new Vector3(step * i, step * j, step * k);
+                    Vector3 pos = new Vector3(step * (i - col * 0.5f), step * (j - row * 0.5f), step * k * .5f);
                     Block block = new Block();
                     block.id = index;
                     block.button = Instantiate(models[index]);

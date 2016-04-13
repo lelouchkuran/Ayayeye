@@ -3,6 +3,11 @@ using System.Collections;
 
 public class Level : MonoBehaviour {
 
+    public delegate void LevelInHandler ();
+    public delegate void LevelOutHandler ();
+    public event LevelInHandler LevelIn;
+    public event LevelOutHandler LevelOut;
+
     // Use this for initialization
     void Start () {
 
@@ -24,5 +29,14 @@ public class Level : MonoBehaviour {
 
     public float GetSpeed () {
         return 1.0f;
+    }
+
+    // TODO
+    public void TransLevel () {
+        if (LevelOut != null)
+            LevelOut();
+        // TODO
+        if (LevelIn != null)
+            LevelIn();
     }
 }
