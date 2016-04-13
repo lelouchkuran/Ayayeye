@@ -3,25 +3,25 @@ using System.Collections;
 
 public class Level : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    // Use this for initialization
+    void Start () {
 
-	public float GetSpeed() {
-		return 10;
-	}
+    }
 
-	public bool IsWord() {
+    // Update is called once per frame
+    void Update () {
 
-	}
+    }
 
-	public bool IsOppo() {
+    public float GetSpeed () {
+        return 10;
+    }
 
-	}
+    public bool IsWord () {
+        return true;
+    }
+
+    public bool IsOppo () {
+        return true;
+    }
 }
