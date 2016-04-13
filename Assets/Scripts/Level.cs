@@ -22,4 +22,7 @@ public class Level : MonoBehaviour {
 		return Random.Range (0, 3);
 	}
 
+    public float GetSpeed () {
+        return 1.0f;
+    }
 }
