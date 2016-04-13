@@ -4,6 +4,8 @@ using System.Collections;
 public class Constant : Singleton<Constant> {
 	public float CubeGenerateDis;
 	public float CubeMissDis;
+    public float CoverStepL = 0.15f;
+    public float CoverCD = 1.0f;
 
 	#region prefabs
 	public GameObject ArrowPrefab;

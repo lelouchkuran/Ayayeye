@@ -3,19 +3,16 @@ using System.Collections;
 
 public class Level : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public delegate void LevelInHandler ();
+    public delegate void LevelOutHandler ();
+    public event LevelInHandler LevelIn;
+    public event LevelOutHandler LevelOut;
 
-	public float GetSpeed() {
-		return 10;
-	}
+    // Use this for initialization
+    void Start () {
+
+    }
+
 
 	public bool IsWord() {
 		return (Random.Range (0, 2) == 0);
@@ -29,4 +26,17 @@ public class Level : MonoBehaviour {
 		// 0 no voer, 1 all cover, 2 line cover -, 3 line cover |
 		return Random.Range (0, 3);
 	}
+
+    public float GetSpeed () {
+        return 1.0f;
+    }
+
+    // TODO
+    public void TransLevel () {
+        if (LevelOut != null)
+            LevelOut();
+        // TODO
+        if (LevelIn != null)
+            LevelIn();
+    }
 }
