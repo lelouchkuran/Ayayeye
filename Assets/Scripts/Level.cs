@@ -8,36 +8,62 @@ public class Level : MonoBehaviour {
     public event LevelInHandler LevelIn;
     public event LevelOutHandler LevelOut;
 
-    // Use this for initialization
-    void Start () {
+	public BaseLevel[] levels;
+	int p, turns;
 
+    // Use this for initialization
+    void Awake () {
+		p = 0;
+		turns = levels [p].turn_num;
     }
 
 	public float GetSpeed() {
-		return 3;
+		return levels [p].speed_range.x + (levels [p].speed_range.y - levels [p].speed_range.x) * (turns / levels [p].turn_num);
 	}
 
 	public bool IsWord() {
-		return (Random.Range (0, 2) == 0);
+		return (Random.Range(0.0f, 1.0f) < levels[p].word_ratio);
 	}
 
 	public bool IsOppo() {
-		return (Random.Range (0, 2) == 0);
+		return (Random.Range(0.0f, 1.0f) < levels[p].oppo_ratio);
 	}
 
 	public int CoverInfo() {
 		// 0 no voer, 1 all cover, 2 line cover -, 3 line cover |
-		return Random.Range (0, 3);
+		if (Random.Range (0.0f, 1.0f) < levels [p].cover_ratio) {
+			if (Random.Range (0.0f, 1.0f) < levels [p].cover_all_ratio) {
+				return 1;
+			} else {
+				return 2;
+			}
+		}
+		return 0;
 	}
 
 	public void Right() {
 		Debug.Log("R!");
+		Finish ();
 	}
 
 	public void Wrong() {
 		Debug.Log("W!");
+		Finish ();
 	}
 
+	void Finish() {
+		turns -= 1;
+		if (turns == 0) {
+			p += 1;
+			if (p >= levels.Length) {
+				p = levels.Length - 1;
+				Debug.Log("END!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+				// TODO: finish
+
+			}
+			turns = levels[p].turn_num;
+		}
+	}
     // TODO
     public void TransLevel () {
         if (LevelOut != null)
@@ -47,4 +73,14 @@ public class Level : MonoBehaviour {
             LevelIn();
     }
 
+}
+
+[System.Serializable]
+public class BaseLevel {
+	public float oppo_ratio;
+	public float word_ratio;
+	public float cover_ratio;
+	public float cover_all_ratio;
+	public Vector2 speed_range;
+	public int turn_num;
 }
