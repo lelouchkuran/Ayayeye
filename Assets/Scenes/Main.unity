@@ -8,25 +8,25 @@ SceneSettings:
   m_PVSPortalsArray: []
   m_OcclusionBakeSettings:
     smallestOccluder: 5
-    smallestHole: .25
+    smallestHole: 0.25
     backfaceThreshold: 100
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 6
   m_Fog: 0
-  m_FogColor: {r: .5, g: .5, b: .5, a: 1}
+  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
-  m_FogDensity: .00999999978
+  m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: .211999997, g: .226999998, b: .259000003, a: 1}
-  m_AmbientEquatorColor: {r: .114, g: .125, b: .133000001, a: 1}
-  m_AmbientGroundColor: {r: .0469999984, g: .0430000015, b: .0350000001, a: 1}
+  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
+  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
-  m_HaloStrength: .5
+  m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
@@ -40,7 +40,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 5
+  serializedVersion: 6
   m_GIWorkflowMode: 0
   m_LightmapsMode: 1
   m_GISettings:
@@ -65,7 +65,8 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
-  m_LightmapSnapshot: {fileID: 0}
+    m_ReflectionCompression: 2
+  m_LightingDataAsset: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
 NavMeshSettings:
@@ -73,20 +74,17 @@ NavMeshSettings:
   m_ObjectHideFlags: 0
   m_BuildSettings:
     serializedVersion: 2
-    agentRadius: .5
+    agentRadius: 0.5
     agentHeight: 2
     agentSlope: 45
-    agentClimb: .400000006
+    agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     accuratePlacement: 0
     minRegionArea: 2
-    cellSize: .166666672
+    cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!127 &5
-LevelGameManager:
-  m_ObjectHideFlags: 0
 --- !u!1001 &15249325
 Prefab:
   m_ObjectHideFlags: 0
@@ -126,22 +124,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 11435442, guid: 2e2ba5fecfed6a042aa3d4f323941a5b, type: 2}
-      propertyPath: models.Array.data[0]
-      value: 
-      objectReference: {fileID: 111592, guid: ffd586ccc3810cd4a9b29fcd5038fdc6, type: 2}
-    - target: {fileID: 11435442, guid: 2e2ba5fecfed6a042aa3d4f323941a5b, type: 2}
-      propertyPath: models.Array.data[1]
-      value: 
-      objectReference: {fileID: 103680, guid: 915c4400dbfeded4db4b28a156a40b0d, type: 2}
-    - target: {fileID: 11435442, guid: 2e2ba5fecfed6a042aa3d4f323941a5b, type: 2}
-      propertyPath: models.Array.data[2]
-      value: 
-      objectReference: {fileID: 136550, guid: 22973e7b9ad055d4aa94f5eb8fd7cdee, type: 2}
-    - target: {fileID: 11435442, guid: 2e2ba5fecfed6a042aa3d4f323941a5b, type: 2}
-      propertyPath: models.Array.data[3]
-      value: 
-      objectReference: {fileID: 165004, guid: 575479c5d0b7e0447816e206de8913c0, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e2ba5fecfed6a042aa3d4f323941a5b, type: 2}
   m_IsPrefabParent: 0
@@ -483,9 +465,9 @@ MonoBehaviour:
   AngleTurn: 25
   NormalColor: {r: 0, g: 0, b: 1, a: 1}
   OpposiColor: {r: 1, g: 0, b: 0, a: 1}
-  CoverStepL: .449999988
+  CoverStepL: 0.45
   CoverCD: 0
-  CoverOffset: -.100000001
+  CoverOffset: -0.2
   CoverScale: 4
   ArrowPrefab: {fileID: 187244, guid: de66b6df6c7dc9948abaa9d778fcf46a, type: 2}
   DirPrefab:
@@ -638,27 +620,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - oppo_ratio: 0
-    word_ratio: .5
+    word_ratio: 0.5
     cover_ratio: 0
     cover_all_ratio: 0
     speed_range: {x: 1.5, y: 2}
     turn_num: 8
-  - oppo_ratio: .349999994
-    word_ratio: .5
+  - oppo_ratio: 0.35
+    word_ratio: 0.5
     cover_ratio: 0
     cover_all_ratio: 0
     speed_range: {x: 2, y: 2.5}
     turn_num: 10
-  - oppo_ratio: .5
-    word_ratio: .5
-    cover_ratio: .5
+  - oppo_ratio: 0.5
+    word_ratio: 0.5
+    cover_ratio: 0.5
     cover_all_ratio: 0
     speed_range: {x: 2.5, y: 2.75}
     turn_num: 6
-  - oppo_ratio: .5
-    word_ratio: .5
-    cover_ratio: .800000012
-    cover_all_ratio: .5
+  - oppo_ratio: 0.5
+    word_ratio: 0.5
+    cover_ratio: 0.8
+    cover_all_ratio: 0.5
     speed_range: {x: 2.75, y: 3}
     turn_num: 6
 --- !u!4 &775036060
@@ -698,7 +680,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 6
   m_Type: 1
-  m_Color: {r: 1, g: .956862748, b: .839215696, a: 1}
+  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -707,8 +689,9 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_Strength: 1
-    m_Bias: .0500000007
-    m_NormalBias: .400000006
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
@@ -727,12 +710,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 818472402}
-  m_LocalRotation: {x: .408217937, y: -.234569728, z: .109381676, w: .875426054}
+  m_LocalRotation: {x: 0.40821794, y: -0.23456973, z: 0.109381676, w: 0.87542605}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1001 &895267219
 Prefab:
   m_ObjectHideFlags: 0
@@ -814,6 +797,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 1
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -838,6 +822,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -848,6 +833,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -858,6 +844,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -868,6 +855,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1019742756
 Prefab:
   m_ObjectHideFlags: 0
@@ -1176,7 +1164,7 @@ Transform:
   m_GameObject: {fileID: 2056621855}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .100000001, y: .100000001, z: .100000001}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 713461421}
   m_RootOrder: 0
@@ -1198,8 +1186,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -1214,7 +1204,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: .5
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &2056621859
 MeshFilter:
