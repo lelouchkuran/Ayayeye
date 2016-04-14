@@ -35,9 +35,10 @@ public class CubeBehavior : MonoBehaviour {
 
 	public void Finish(bool win) {
 		if (win) {
-			// right cube effect
-
-		} else {
+            // right cube effect
+            GameObject.Find("FeedbackController").GetComponent<FeedbackController>().playRightFeedback(this.gameObject);
+        }
+        else {
 			// wrong cube effect
 
 		}

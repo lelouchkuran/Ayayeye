@@ -30,7 +30,7 @@ public class Player : MonoBehaviour {
 		float angle_now = Vector3.Angle (FacingPoint.transform.position, generator_now.gameObject.transform.position);
 		float angle_next = Vector3.Angle (FacingPoint.transform.position, target.transform.position);
 
-		if (angle_next < Constant.Instance.AngleTurn || (angle_now > 90 - Constant.Instance.AngleTurn)) {
+		if (angle_next < Constant.Instance.AngleTurn || (angle_now > 90 - Constant.Instance.AngleTurn && angle_next < 40)) {
 			Right ();
 		} else {
 			for (int i = 0; i < 4; ++i) {
@@ -51,8 +51,8 @@ public class Player : MonoBehaviour {
 	public void Right() {
 		level.Right ();
 		cube_now.Finish (true);
-		// right people effect
-		if (target != null)
+        // right people effect
+        if (target != null)
 			SwitchG (target);
 		else {
 			NSwitch();

@@ -42,7 +42,7 @@ public class BlockBehavior : MonoBehaviour {
                     block.button.transform.parent = gameObject.transform;
                     block.button.transform.localRotation = Quaternion.Euler(new Vector3(-90, 0, -transform.parent.localRotation.z));
                     block.button.transform.localPosition = new Vector3(step * (i - (col - 1) * 0.5f), step * (j - (row - 1) * 0.5f), thick * k);
-                    Debug.Log(block.button.transform.localPosition);
+                    //Debug.Log(block.button.transform.localPosition);
                     block.button.transform.localScale = new Vector3(scale, scale, scale);
                     queues[i + j * col].Enqueue(block);
                 }
@@ -80,6 +80,7 @@ public class BlockBehavior : MonoBehaviour {
     }
 
     void DestroyBlock (Block block) {
+        GameObject.Find("FeedbackController").GetComponent<FeedbackController>().playRightFeedback(block.button);
         Destroy(block.button);
         block.id = -1;
     }

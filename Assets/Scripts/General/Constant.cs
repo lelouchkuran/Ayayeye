@@ -10,7 +10,7 @@ public class Constant : Singleton<Constant> {
 	public Color OpposiColor;
 
     public float CoverStepL = 0.3f;
-    public float CoverCD = 1.0f;
+    public float CoverCD = 0.0f;
     public float CoverOffset = -0.5f;
     public float CoverScale = 5.0f;
 
