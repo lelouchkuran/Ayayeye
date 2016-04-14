@@ -10,6 +10,7 @@ public class Level : MonoBehaviour {
 
 	public BaseLevel[] levels;
 	int p, turns;
+    static int count = -1;
 
     // Use this for initialization
     void Awake () {
@@ -42,13 +43,17 @@ public class Level : MonoBehaviour {
 	}
 
 	public void Right() {
-		Debug.Log("R!");
+        count++;
+		Debug.Log("R! ");
+        GameObject.Find("Grid").GetComponent<ScoreController>().setGrid(count, true);
 		Finish ();
 	}
 
 	public void Wrong() {
+        count++;
 		Debug.Log("W!");
-		Finish ();
+        GameObject.Find("Grid").GetComponent<ScoreController>().setGrid(count, false);
+        Finish();
 	}
 
 	void Finish() {
@@ -58,6 +63,7 @@ public class Level : MonoBehaviour {
 			if (p >= levels.Length) {
 				p = levels.Length - 1;
 				Debug.Log("END!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                Application.LoadLevel("End");
 				// TODO: finish
 
 			}
