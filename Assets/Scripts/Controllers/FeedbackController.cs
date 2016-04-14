@@ -27,9 +27,9 @@ public class FeedbackController : MonoBehaviour {
         }
     }
 
-    public void playRightFeedback (GameObject rightGameObject)
+    public void playRightFeedback (Transform right_transform)
     {
-        _explosion = Instantiate(rightFeedback, rightGameObject.transform.position, Quaternion.identity) as GameObject;
+        _explosion = Instantiate(rightFeedback, right_transform.position, Quaternion.identity) as GameObject;
         _explosion.GetComponent<ParticleSystem>().Play();
         _explosionArray.Add(_explosion);
     }
