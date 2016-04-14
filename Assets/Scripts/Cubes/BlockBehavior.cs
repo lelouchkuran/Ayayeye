@@ -28,6 +28,7 @@ public class BlockBehavior : MonoBehaviour {
         }
     }
 
+
     public void OnBirth (int row, int col, int layer) {
         if (!initialized) {
             xy_off = Constant.Instance.CoverStepL;
@@ -105,6 +106,7 @@ public class BlockBehavior : MonoBehaviour {
     }
 
     void DestroyBlock (Block block) {
+        GameObject.Find("FeedbackController").GetComponent<FeedbackController>().playRightFeedback(block.button);
         Destroy(block.button);
         block.id = -1;
     }
