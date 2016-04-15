@@ -3026,7 +3026,6 @@ MonoBehaviour:
   StartGenerator: {fileID: 1285230498}
   FacingPoint: {fileID: 713461420}
   level: {fileID: 775036059}
-  target: {fileID: 0}
 --- !u!4 &348036918
 Transform:
   m_ObjectHideFlags: 0
