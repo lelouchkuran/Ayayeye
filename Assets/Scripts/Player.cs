@@ -24,6 +24,11 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		for (int i = 0; i < 4; ++i) {
+			if (Vector3.Angle(FacingPoint.transform.position, generator_now.neighbors[i].transform.position) < Constant.Instance.AngleTurn) {
+				Wrong(generator_now.neighbors[i]);
+			}
+		}
 		if (target == null)
 			return;
 
@@ -32,12 +37,6 @@ public class Player : MonoBehaviour {
 
 		if (angle_next < Constant.Instance.AngleTurn || (angle_now > 90 - Constant.Instance.AngleTurn && angle_next < 40)) {
 			Right ();
-		} else {
-			for (int i = 0; i < 4; ++i) {
-				if (Vector3.Angle(FacingPoint.transform.position, generator_now.neighbors[i].transform.position) < Constant.Instance.AngleTurn) {
-					Wrong(generator_now.neighbors[i]);
-				}
-			}
 		}
 	}
 
