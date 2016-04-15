@@ -12,8 +12,10 @@ public class Rotator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float yVal = cameraHead.transform.rotation.y;
-        transform.rotation = new Quaternion(transform.rotation.x, yVal, transform.rotation.z, 0.0f);
+        //transform.RotateAround(Vector3.zero, Vector3.up, yVal * Time.deltaTime);
 
-	}
+        //Vector3 eulerRotation = new Vector3(transform.eulerAngles.x, 0, transform.eulerAngles.z);
+
+        //transform.rotation = Quaternion.Euler(eulerRotation);
+    }
 }

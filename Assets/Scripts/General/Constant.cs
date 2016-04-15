@@ -14,8 +14,14 @@ public class Constant : Singleton<Constant> {
     public float CoverOffset = -0.5f;
     public float CoverScale = 5.0f;
 
-	#region prefabs
-	public GameObject ArrowPrefab;
+    //Popping
+    public float dis_mov = 1;
+    public float scale = 200;
+    public float time_come = 5f;
+    public float time_fade = 0.25f;
+
+    #region prefabs
+    public GameObject ArrowPrefab;
 	public GameObject[] DirPrefab;
 	public GameObject[] ShapePrefab;
 	public KeyCode[] KeyMap;
