@@ -8,7 +8,7 @@ public class Player : MonoBehaviour {
 
 	CubeGenerator generator_now = null;
 	CubeBehavior cube_now = null;
-	public GameObject target = null;
+	GameObject target = null;
 
 	// Use this for initialization
 	void Start () {
@@ -24,19 +24,26 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		for (int i = 0; i < 4; ++i) {
-			if (Vector3.Angle(FacingPoint.transform.position, generator_now.neighbors[i].transform.position) < Constant.Instance.AngleTurn) {
-				Wrong(generator_now.neighbors[i]);
+		if (target == null) {
+			for (int i = 0; i < 4; ++i) {
+				if (Vector3.Angle (FacingPoint.transform.position, generator_now.neighbors [i].transform.position) < Constant.Instance.AngleTurn) {
+					Wrong (generator_now.neighbors [i]);
+				}
 			}
+			return ;
 		}
-		if (target == null)
-			return;
 
 		float angle_now = Vector3.Angle (FacingPoint.transform.position, generator_now.gameObject.transform.position);
 		float angle_next = Vector3.Angle (FacingPoint.transform.position, target.transform.position);
 
 		if (angle_next < Constant.Instance.AngleTurn || (angle_now > 90 - Constant.Instance.AngleTurn && angle_next < 40)) {
 			Right ();
+		} else {
+			for (int i = 0; i < 4; ++i) {
+				if (Vector3.Angle (FacingPoint.transform.position, generator_now.neighbors [i].transform.position) < Constant.Instance.AngleTurn) {
+					Wrong (generator_now.neighbors [i]);
+				}
+			}
 		}
 	}
 
