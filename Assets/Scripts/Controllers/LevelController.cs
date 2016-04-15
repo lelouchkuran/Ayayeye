@@ -24,27 +24,40 @@ public class LevelController : MonoBehaviour {
         //        Debug.Log("KeyCode down: " + kcode);
         //}
 
-        if (Input.GetKeyDown(buttons[1]))
+        if (Input.GetKeyDown(buttons[0]))
         {
             Debug.Log("O");
 
-            GameObject box = boxes[0] as GameObject;
-            Instantiate(explosion);
-            explosion.transform.position = box.transform.position;
-            explosion.GetComponent<ParticleSystem>().Play();
-            Destroy(box);
-            Invoke("newLevel", explosion.GetComponent<ParticleSystem>().duration);
+            if (Application.loadedLevel == 2)
+            {
+                Application.LoadLevel("Main");
+            }
+            else
+            {
+                GameObject box = boxes[0] as GameObject;
+                Instantiate(explosion);
+                explosion.transform.position = box.transform.position;
+                explosion.GetComponent<ParticleSystem>().Play();
+                Destroy(box);
+                Invoke("newLevel", explosion.GetComponent<ParticleSystem>().duration);
+            }
         }
-        else if (Input.GetKeyDown(buttons[0]))
+        else if (Input.GetKeyDown(buttons[1]))
         {
             Debug.Log("X");
-
-            GameObject box = boxes[1] as GameObject;
-            Instantiate(explosion);
-            explosion.transform.position = box.transform.position;
-            explosion.GetComponent<ParticleSystem>().Play();
-            Destroy(box);
-            Application.Quit();
+            if (Application.loadedLevel == 2)
+            {
+                Application.Quit();
+            }
+            else
+            {
+                GameObject box = boxes[1] as GameObject;
+                Instantiate(explosion);
+                explosion.transform.position = box.transform.position;
+                explosion.GetComponent<ParticleSystem>().Play();
+                Destroy(box);
+                Application.Quit();
+            }
         }
     }
 

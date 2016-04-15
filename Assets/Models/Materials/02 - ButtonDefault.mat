@@ -8,10 +8,11 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: 02 - ButtonDefault
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION
+  m_ShaderKeywords: _ALPHATEST_ON _EMISSION
   m_LightmapFlags: 1
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2450
+  stringTagMap:
+    RenderType: TransparentCutout
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -122,7 +123,7 @@ Material:
       data:
         first:
           name: _Mode
-        second: 0
+        second: 1
       data:
         first:
           name: _Metallic
@@ -131,8 +132,8 @@ Material:
       data:
         first:
           name: _EmissionColor
-        second: {r: .117999911, g: .117999911, b: 2, a: 1}
+        second: {r: .137254909, g: .396078467, b: .556862772, a: 1}
       data:
         first:
           name: _Color
-        second: {r: .0590000004, g: .0590000004, b: 1, a: 1}
+        second: {r: .0389273427, g: .341469169, b: .529411793, a: 1}
