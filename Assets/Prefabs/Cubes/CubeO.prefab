@@ -88,7 +88,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174534}
-  m_Mesh: {fileID: 4300020, guid: afcee98c7224d084497200a8c24a7b1c, type: 3}
+  m_Mesh: {fileID: 4300008, guid: 228e8adf433f6004cb2af1420a34c44a, type: 3}
 --- !u!114 &11415286
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72cc720262e8a16449f823ccf6473851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dir: 0
+  dir_show: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -111,6 +113,10 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300008, guid: 228e8adf433f6004cb2af1420a34c44a, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 139526}
