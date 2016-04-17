@@ -20,6 +20,17 @@ public class Constant : Singleton<Constant> {
     public float time_come = 5f;
     public float time_fade = 0.25f;
 
+	// tunnal color feedback
+	public int FlashTimes_Right;
+	public float FlashPeriod_Right;
+	public float FlashStay_Right;
+	public int FlashTimes_Wrong;
+	public float FlashPeriod_Wrong;
+	public float FlashStay_Wrong;
+	public Color ColorNormal;
+	public Color ColorRight;
+	public Color ColorWrong;
+
     #region prefabs
     public GameObject ArrowPrefab;
 	public GameObject[] DirPrefab;
