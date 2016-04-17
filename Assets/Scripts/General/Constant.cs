@@ -31,6 +31,10 @@ public class Constant : Singleton<Constant> {
 	public Color ColorRight;
 	public Color ColorWrong;
 
+	// shake
+	public float ShakeTime;
+	public float ShakeRange;
+
     #region prefabs
     public GameObject ArrowPrefab;
 	public GameObject[] DirPrefab;

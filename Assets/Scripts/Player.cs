@@ -54,6 +54,7 @@ public class Player : MonoBehaviour {
 		// wrong people effect
 		NSwitch ();
 		// miss people effect
+		generator_now.shake.shake ();
 	}
 
 	public void Right() {
@@ -75,6 +76,7 @@ public class Player : MonoBehaviour {
 		// wrong people effect
 		tunnels.Wrong ();
 		SwitchG (next_generator);
+		generator_now.shake.shake ();
 	}
 
 	public void SwitchG(GameObject next_generator) {

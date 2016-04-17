@@ -15,6 +15,8 @@ public class CubeGenerator : MonoBehaviour {
 	int generatr_pointer = 0;
 	bool moving = false;
 
+	public Shake shake;
+
 	// Use this for initialization
 	void Awake () {
 		arrow_rotations = new Vector3[4];
