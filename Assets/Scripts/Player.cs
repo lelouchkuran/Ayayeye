@@ -39,12 +39,17 @@ public class Player : MonoBehaviour {
 
 		if (angle_next < Constant.Instance.AngleTurn || (angle_now > 90 - Constant.Instance.AngleTurn && angle_next < 40)) {
 			Right ();
-		} else {
+            Debug.Log("Right!");
+            GameObject.Find("ScoreController").GetComponent<ScoreController>().setScore(true, Time.time);
+        }
+        else {
 			for (int i = 0; i < 4; ++i) {
 				if (Vector3.Angle (FacingPoint.transform.position, generator_now.neighbors [i].transform.position) < Constant.Instance.AngleTurn) {
 					Wrong (generator_now.neighbors [i]);
-				}
-			}
+                    Debug.Log("Wrong");
+                    GameObject.Find("ScoreController").GetComponent<ScoreController>().setScore(false, Time.time);
+                }
+            }
 		}
 	}
 

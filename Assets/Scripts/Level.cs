@@ -45,14 +45,14 @@ public class Level : MonoBehaviour {
 	public void Right() {
         count++;
 		Debug.Log("R! ");
-        GameObject.Find("Grid").GetComponent<ScoreController>().setGrid(count, true);
+        GameObject.Find("ScoreController").GetComponent<ScoreController>().setGrid(count, true);
 		Finish ();
 	}
 
 	public void Wrong() {
         count++;
 		Debug.Log("W!");
-        GameObject.Find("Grid").GetComponent<ScoreController>().setGrid(count, false);
+        GameObject.Find("ScoreController").GetComponent<ScoreController>().setGrid(count, false);
         Finish();
 	}
 
