@@ -20,19 +20,7 @@ public class CubeArrow : CubeBehavior {
             cover_ins.transform.localRotation = Quaternion.identity;
             BlockBehavior cover = cover_ins.GetComponent<BlockBehavior>() ?? null;
             if (cover) {
-                switch (cover_shape) {
-                    case 1:
-                        cover.OnBirth(3, 3, 2);
-                        break;
-                    case 2:
-                        cover.OnBirth(3, 2, 2);
-                        break;
-                    case 3:
-                        cover.OnBirth(3, 2, 2);
-                        break;
-                    default:
-                        break;
-                }
+                cover.OnBirth(1, 1, Random.Range(1, 5));
             }
         }
     }

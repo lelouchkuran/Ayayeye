@@ -37,7 +37,6 @@ public class BlockBehavior : MonoBehaviour {
         if (!initialized) {
             xy_off = Constant.Instance.CoverStepL;
             cd = Constant.Instance.CoverCD;
-            scale = Constant.Instance.CoverScale;
             z_off = Constant.Instance.CoverOffset;
             num_col = col;
             num_row = row;
@@ -62,7 +61,6 @@ public class BlockBehavior : MonoBehaviour {
                     block.button.transform.parent = gameObject.transform;
                     block.button.transform.localRotation = Quaternion.Euler(new Vector3(-90, 0, 0));
                     block.button.transform.localPosition = new Vector3(xy_off * (i - (col - 1) * 0.5f), xy_off * (j - (row - 1) * 0.5f), z_off);
-                    block.button.transform.localScale = new Vector3(scale, scale, scale);
                     blocks[i + j * col] = block;
                 }
             }
