@@ -9,7 +9,7 @@ public class LevelController : MonoBehaviour {
     public GameObject explosion;
 
     public GameObject[] boxes;
-
+    float _speed = 20;
 	// Use this for initialization
 	void Start () {
 	
@@ -17,6 +17,10 @@ public class LevelController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        foreach (GameObject box in boxes)
+        {
+            box.transform.Rotate(new Vector3(_speed * Time.deltaTime, _speed * Time.deltaTime, _speed * Time.deltaTime), Space.World);
+        }
 
         //foreach (KeyCode kcode in Enum.GetValues(typeof(KeyCode)))
         //{
