@@ -11,8 +11,7 @@ public class Constant : Singleton<Constant> {
 
     public float CoverStepL = 0.3f;
     public float CoverCD = 0.0f;
-    public float CoverOffset = -0.5f;
-    public float CoverScale = 5.0f;
+    public float CoverOffset = -0.75f;
 
     //Popping
     public float dis_mov = 1;
