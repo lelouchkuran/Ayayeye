@@ -5,6 +5,7 @@ public class Player : MonoBehaviour {
 	public GameObject StartGenerator;
 	public GameObject FacingPoint;
 	public Level level;
+	public TunnelFlashController tunnels;
 
 	CubeGenerator generator_now = null;
 	CubeBehavior cube_now = null;
@@ -49,15 +50,19 @@ public class Player : MonoBehaviour {
 
 	public void Miss() {
 		level.Wrong ();
+		tunnels.Wrong ();
 		// wrong people effect
 		NSwitch ();
 		// miss people effect
+		generator_now.shake.shake ();
 	}
 
 	public void Right() {
 		level.Right ();
 		cube_now.Finish (true);
         // right people effect
+		tunnels.Right ();
+
         if (target != null)
 			SwitchG (target);
 		else {
@@ -69,7 +74,9 @@ public class Player : MonoBehaviour {
 		level.Wrong ();
 		cube_now.Finish (false);
 		// wrong people effect
+		tunnels.Wrong ();
 		SwitchG (next_generator);
+		generator_now.shake.shake ();
 	}
 
 	public void SwitchG(GameObject next_generator) {
