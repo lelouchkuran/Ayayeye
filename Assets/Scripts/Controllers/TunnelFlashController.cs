@@ -8,7 +8,6 @@ public class TunnelFlashController : MonoBehaviour {
 	}
 
 	public void Right() {
-		Debug.Log("C");
 		StopCoroutine ("CoRight");
 		StopCoroutine ("CoWrong");
 		StartCoroutine("CoRight");
@@ -21,12 +20,10 @@ public class TunnelFlashController : MonoBehaviour {
 	}
 
 	IEnumerator CoRight() {
-		Debug.Log("Right" +c.FlashTimes_Right);
 		Color delta = c.ColorRight - c.ColorNormal;
 		float tt = c.FlashPeriod_Right;
 
 		for (int i = 0; i < c.FlashTimes_Right; ++i) {
-			Debug.Log("Right i " + tt);
 			// turn
 			for (float rest_time = tt; rest_time >= 0; rest_time -= 0.01f) {
 				float ratio = 1 - rest_time / tt;

@@ -34,6 +34,8 @@ public class Constant : Singleton<Constant> {
 	public float ShakeTime;
 	public float ShakeRange;
 
+	public float SpeedIncForOffset;
+
     #region prefabs
     public GameObject ArrowPrefab;
 	public GameObject[] DirPrefab;
