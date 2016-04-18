@@ -17,7 +17,7 @@ public class BlockBehavior : MonoBehaviour {
     int[] layers;
     bool initialized = false;
     int num_row, num_col, num_layer;
-    Transform target;
+    static Transform target;
 
     void Start () {
         target = FindObjectOfType<Cardboard>().transform;
