@@ -10,7 +10,7 @@ class Block {
 public class BlockBehavior : MonoBehaviour {
     public GameObject[] models;
     public GameObject cover;
-    static float timestamp, xy_off, cd, scale, z_off;
+    static float timestamp, xy_off, cd, z_off;
     static KeyCode[] keymap;
     Block[] blocks;
     GameObject[] covers;
@@ -113,7 +113,6 @@ public class BlockBehavior : MonoBehaviour {
         block.button.transform.parent = gameObject.transform;
         block.button.transform.localRotation = Quaternion.Euler(new Vector3(-90, 0, 0));
         block.button.transform.localPosition = new Vector3(xy_off * (col - (num_col - 1) * 0.5f), xy_off * (row - (num_row - 1) * 0.5f), z_off);
-        block.button.transform.localScale = new Vector3(scale, scale, scale);
     }
 
     void DestroyBlock (Block block) {
