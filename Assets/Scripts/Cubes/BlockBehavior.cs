@@ -17,9 +17,11 @@ public class BlockBehavior : MonoBehaviour {
     int[] layers;
     bool initialized = false;
     int num_row, num_col, num_layer;
+    Transform target;
 
     void Start () {
-        //OnBirth(3, 3, 2);
+        target = FindObjectOfType<Cardboard>().transform;
+        OnBirth(1, 1, 2);
     }
 
     // Update is called once per frame
@@ -111,7 +113,7 @@ public class BlockBehavior : MonoBehaviour {
         block.button = Instantiate(models[index]);
         block.id = index;
         block.button.transform.parent = gameObject.transform;
-        block.button.transform.localRotation = Quaternion.Euler(new Vector3(-90, 0, 0));
+        block.button.transform.LookAt(target);
         block.button.transform.localPosition = new Vector3(xy_off * (col - (num_col - 1) * 0.5f), xy_off * (row - (num_row - 1) * 0.5f), z_off);
     }
 
