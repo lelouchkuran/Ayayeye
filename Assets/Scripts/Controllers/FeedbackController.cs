@@ -31,7 +31,6 @@ public class FeedbackController : MonoBehaviour {
     public void playRightFeedback (Transform right_transform)
     {
         _explosion = Instantiate(rightFeedback, right_transform.position, Quaternion.identity) as GameObject;
-        _explosion.transform.parent = right_transform.parent;
         _explosion.transform.LookAt(target);
         _explosionArray.Add(_explosion);
     }
