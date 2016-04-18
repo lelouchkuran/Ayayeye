@@ -7,12 +7,12 @@ public class LevelController : MonoBehaviour {
 
     public KeyCode[] buttons;
     public GameObject explosion;
-
+    public GameObject startText;
     public GameObject[] boxes;
     float _speed = 20;
 	// Use this for initialization
 	void Start () {
-	
+        startText = GameObject.Find("Start");
 	}
 	
 	// Update is called once per frame
@@ -68,5 +68,38 @@ public class LevelController : MonoBehaviour {
     public void newLevel ()
     {
         Application.LoadLevel("Main");
+    }
+
+    public void playFirstSound ()
+    {
+        Vector3 startVector = Camera.main.WorldToViewportPoint(startText.transform.position);
+        if (startVector.x > 0 &&
+            startVector.y > 0 &&
+            startVector.z > 0)
+        {
+            GameObject.Find("SoundManager").GetComponent<SoundController>().playCountdown(0);
+        }
+    }
+
+    public void playSecondSound()
+    {
+        Vector3 startVector = Camera.main.WorldToViewportPoint(startText.transform.position);
+        if (startVector.x > 0 &&
+            startVector.y > 0 &&
+            startVector.z > 0)
+        {
+            GameObject.Find("SoundManager").GetComponent<SoundController>().playCountdown(1);
+        }
+    }
+
+    public void playLastSound()
+    {
+        Vector3 startVector = Camera.main.WorldToViewportPoint(startText.transform.position);
+        if (startVector.x > 0 &&
+            startVector.y > 0 &&
+            startVector.z > 0)
+        {
+            GameObject.Find("SoundManager").GetComponent<SoundController>().playCountdown(2);
+        }
     }
 }
