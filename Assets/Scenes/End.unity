@@ -128,11 +128,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2000004, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
       propertyPath: m_ClearFlags
@@ -218,6 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttons: 4a0100004b010000
   explosion: {fileID: 0}
+  startText: {fileID: 0}
   boxes:
   - {fileID: 1622734052}
   - {fileID: 1622734053}
@@ -271,7 +272,7 @@ Transform:
   m_Children:
   - {fileID: 1677692734}
   m_Father: {fileID: 239400724}
-  m_RootOrder: 0
+  m_RootOrder: 3
 --- !u!95 &786183298
 Animator:
   serializedVersion: 3
@@ -377,7 +378,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 239400724}
     m_Modifications:
     - target: {fileID: 442570, guid: 2252d06bbfef24345b71133ef95c28ae, type: 2}
       propertyPath: m_LocalPosition.x
@@ -409,7 +410,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 442570, guid: 2252d06bbfef24345b71133ef95c28ae, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 442570, guid: 2252d06bbfef24345b71133ef95c28ae, type: 2}
       propertyPath: m_LocalScale.x

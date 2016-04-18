@@ -28,7 +28,7 @@ public class LevelController : MonoBehaviour {
         //        Debug.Log("KeyCode down: " + kcode);
         //}
 
-        /*if (Input.GetKeyDown(buttons[0]))
+        if (Input.GetKeyDown(buttons[0]))
         {
             Debug.Log("O");
 
@@ -62,7 +62,7 @@ public class LevelController : MonoBehaviour {
                 Destroy(box);
                 Application.Quit();
             }
-        }*/
+        }
     }
 
     public void newLevel ()
