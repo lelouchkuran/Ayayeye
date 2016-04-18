@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &182364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 407392}
+  - 114: {fileID: 11453354}
+  m_Layer: 0
+  m_Name: score
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &407392
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182364}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11453354
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9431457567a54f4682ffa112d039f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: .200000003
+  startScore: 0
+  ScoreColor:
+    r: .75
+    g: .121323511
+    b: .121323511
+    a: 0
+  timeGap: .400000006
+  digitPrefabs:
+  - {fileID: 100000, guid: 23a1dd624475d9c43b66496b4bfb1b3e, type: 3}
+  - {fileID: 100002, guid: 23a1dd624475d9c43b66496b4bfb1b3e, type: 3}
+  - {fileID: 100004, guid: 23a1dd624475d9c43b66496b4bfb1b3e, type: 3}
+  - {fileID: 100006, guid: 23a1dd624475d9c43b66496b4bfb1b3e, type: 3}
+  - {fileID: 100008, guid: 23a1dd624475d9c43b66496b4bfb1b3e, type: 3}
+  - {fileID: 100010, guid: 23a1dd624475d9c43b66496b4bfb1b3e, type: 3}
+  - {fileID: 100012, guid: 23a1dd624475d9c43b66496b4bfb1b3e, type: 3}
+  - {fileID: 100014, guid: 23a1dd624475d9c43b66496b4bfb1b3e, type: 3}
+  - {fileID: 100016, guid: 23a1dd624475d9c43b66496b4bfb1b3e, type: 3}
+  - {fileID: 100018, guid: 23a1dd624475d9c43b66496b4bfb1b3e, type: 3}
+  offsetHorizontal: .25
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 182364}
+  m_IsPrefabParent: 1

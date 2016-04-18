@@ -12,6 +12,8 @@ public class ScoreController : MonoBehaviour {
     public const int worstTime = 5;
     public int multiplier = 12;
 
+    public GameObject scoreGameObject;
+
     void Awake ()
     {
         transform.parent = null;
@@ -73,5 +75,7 @@ public class ScoreController : MonoBehaviour {
         }
 
         _startTime = previousTime;
+
+        scoreGameObject.GetComponent<ScoreShow>().Change(totalScore);
     }
 }
