@@ -52,7 +52,7 @@ public class BlockBehavior : MonoBehaviour {
                     covers[i + j * col] = Instantiate(cover);
                     covers[i + j * col].transform.parent = transform;
                     covers[i + j * col].transform.localPosition = new Vector3(xy_off * (i - (col - 1) * 0.5f), xy_off * (j - (row - 1) * 0.5f));
-                    covers[i + j * col].transform.localRotation = Quaternion.Euler(new Vector3());
+                    covers[i + j * col].transform.localRotation = Quaternion.Euler(new Vector3(0, 180, 180));
                     blocks[i + j * col] = new Block();
                     int index = Random.Range(0, models.Length - 1);
                     Block block = new Block();
