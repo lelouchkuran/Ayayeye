@@ -14,10 +14,10 @@ public class Constant : Singleton<Constant> {
     public float CoverOffset = -0.75f;
 
     //Popping
-    public float dis_mov = 1;
-    public float scale = 200;
-    public float time_come = 5f;
-    public float time_fade = 0.25f;
+	public float dis_mov;
+	public float scale;
+	public float time_come;
+	public float time_down;
 
 	// tunnal color feedback
 	public int FlashTimes_Right;

@@ -39,31 +39,26 @@ public class Player : MonoBehaviour {
 
 		if (angle_next < Constant.Instance.AngleTurn || (angle_now > 90 - Constant.Instance.AngleTurn && angle_next < 40)) {
 			Right ();
-            Debug.Log("Right!");
-            GameObject.Find("ScoreController").GetComponent<ScoreController>().setScore(true, Time.time);
         }
         else {
 			for (int i = 0; i < 4; ++i) {
 				if (Vector3.Angle (FacingPoint.transform.position, generator_now.neighbors [i].transform.position) < Constant.Instance.AngleTurn) {
 					Wrong (generator_now.neighbors [i]);
-                    Debug.Log("Wrong");
-                    GameObject.Find("ScoreController").GetComponent<ScoreController>().setScore(false, Time.time);
                 }
             }
 		}
 	}
 
 	public void Miss() {
-		level.Wrong ();
-		tunnels.Wrong ();
 		// wrong people effect
 		NSwitch ();
 		// miss people effect
 		generator_now.shake.shake ();
+		level.Wrong ();
+		tunnels.Wrong ();
 	}
 
 	public void Right() {
-		level.Right ();
 		cube_now.Finish (true);
         // right people effect
 		tunnels.Right ();
@@ -73,15 +68,16 @@ public class Player : MonoBehaviour {
 		else {
 			NSwitch();
 		}
+		level.Right ();
 	}
 
 	public void Wrong(GameObject next_generator) {
-		level.Wrong ();
 		cube_now.Finish (false);
 		// wrong people effect
 		tunnels.Wrong ();
 		SwitchG (next_generator);
 		generator_now.shake.shake ();
+		level.Wrong ();
 	}
 
 	public void SwitchG(GameObject next_generator) {
@@ -104,5 +100,9 @@ public class Player : MonoBehaviour {
 		} else {
 			target = generator_now.neighbors[cube_now.GetDir () - 1];
 		}
+	}
+
+	public GameObject GeneratorNow() {
+		return generator_now.gameObject;
 	}
 }

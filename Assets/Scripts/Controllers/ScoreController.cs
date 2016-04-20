@@ -13,6 +13,8 @@ public class ScoreController : MonoBehaviour {
     public int multiplier = 12;
 
     public GameObject scoreGameObject;
+	public NumGenerator num_generator;
+	public GameObject score_generate, score_target;
 
     void Awake ()
     {
@@ -66,6 +68,7 @@ public class ScoreController : MonoBehaviour {
         if (isRight)
         {
             scoreForRound = (worstTime - timeTaken) * multiplier;
+			num_generator.Generate((int)scoreForRound, score_generate.transform.position, score_target);
             totalScore += (int)scoreForRound;
         }
         else

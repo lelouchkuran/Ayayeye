@@ -37,7 +37,7 @@ public class CubeBehavior : MonoBehaviour {
 		if (win) {
             // right cube effect
             GameObject.Find("FeedbackController").GetComponent<FeedbackController>().playRightFeedback(transform);
-            GameObject.Find("PoppingController").GetComponent<NumGenerator>().Generate(10, transform.position, transform.parent.gameObject);
+            // GameObject.Find("PoppingController").GetComponent<NumGenerator>().Generate(10, transform.position, transform.parent.gameObject);
         }
         else {
 			// wrong cube effect

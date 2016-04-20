@@ -41,11 +41,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   t: .200000003
   startScore: 0
-  ScoreColor:
-    r: .75
-    g: .121323511
-    b: .121323511
-    a: 0
+  ScoreColor: {r: .75, g: .121323511, b: .121323511, a: 0}
   timeGap: .400000006
   digitPrefabs:
   - {fileID: 100000, guid: 23a1dd624475d9c43b66496b4bfb1b3e, type: 3}
@@ -65,7 +61,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 182364}

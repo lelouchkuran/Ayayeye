@@ -13,6 +13,7 @@ public class Level : MonoBehaviour {
     static int count = -1;
 
 	public TunnelOffsetSpeedController rolling_speed;
+	public ScoreController score_controller;
 
     // Use this for initialization
     void Awake () {
@@ -47,7 +48,8 @@ public class Level : MonoBehaviour {
 	public void Right() {
         count++;
 		Debug.Log("R! ");
-        GameObject.Find("ScoreController").GetComponent<ScoreController>().setGrid(count, true);
+		score_controller.setGrid(count, true);
+		score_controller.setScore(true, Time.time);
 		Finish ();
 		rolling_speed.Right ();
 	}
@@ -55,7 +57,8 @@ public class Level : MonoBehaviour {
 	public void Wrong() {
         count++;
 		Debug.Log("W!");
-        GameObject.Find("ScoreController").GetComponent<ScoreController>().setGrid(count, false);
+		score_controller.setGrid(count, false);
+		score_controller.setScore(false, Time.time);
         Finish();
 		rolling_speed.Wrong ();
 	}
