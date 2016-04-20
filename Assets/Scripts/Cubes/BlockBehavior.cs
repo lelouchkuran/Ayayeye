@@ -61,7 +61,7 @@ public class BlockBehavior : MonoBehaviour {
                     block.button = Instantiate(models[index]);
                     block.id = index;
                     block.button.transform.parent = gameObject.transform;
-                    block.button.transform.localRotation = Quaternion.Euler(new Vector3(-90, 0, 0));
+                    block.button.transform.localRotation = Quaternion.identity;
                     block.button.transform.localPosition = new Vector3(xy_off * (i - (col - 1) * 0.5f), xy_off * (j - (row - 1) * 0.5f), z_off);
                     blocks[i + j * col] = block;
                 }
