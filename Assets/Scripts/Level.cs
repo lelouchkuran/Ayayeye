@@ -45,7 +45,7 @@ public class Level : MonoBehaviour {
 		return 0;
 	}
 
-	public void Right() {
+	public void Right(bool is_press) {
         count++;
 		Debug.Log("R! ");
 		score_controller.setGrid(count, true);
