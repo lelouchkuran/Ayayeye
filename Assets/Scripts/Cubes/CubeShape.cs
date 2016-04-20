@@ -15,7 +15,10 @@ public class CubeShape : CubeBehavior {
 		if (key == KeyCode.A)
 			return;
 		if (Input.GetKeyDown (key)) {
-			GameObject.Find("Player").GetComponent<Player>().Right();
+			GameObject.Find ("Player").GetComponent<Player> ().Right (true);
+		} else if (Input.anyKeyDown){
+			// TODO: button press wrong
+
 		}
 	}
 
