@@ -6320,29 +6320,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - oppo_ratio: 0
-    word_ratio: 0.5
+    word_ratio: 0
     cover_ratio: 0
     cover_all_ratio: 0
     speed_range: {x: 1.5, y: 2}
-    turn_num: 8
-  - oppo_ratio: 0.35
-    word_ratio: 0.5
-    cover_ratio: 0
+    turn_num: 4
+  - oppo_ratio: 0.15
+    word_ratio: 0.15
+    cover_ratio: 0.75
     cover_all_ratio: 0
     speed_range: {x: 2, y: 2.5}
-    turn_num: 10
-  - oppo_ratio: 0.5
-    word_ratio: 0.5
-    cover_ratio: 0.5
+    turn_num: 5
+  - oppo_ratio: 0.2
+    word_ratio: 0.25
+    cover_ratio: 0.95
     cover_all_ratio: 0
     speed_range: {x: 2.5, y: 2.75}
-    turn_num: 6
+    turn_num: 8
   - oppo_ratio: 0.5
     word_ratio: 0.5
-    cover_ratio: 0.8
+    cover_ratio: 1
     cover_all_ratio: 0.5
     speed_range: {x: 2.75, y: 3}
-    turn_num: 6
+    turn_num: 13
   rolling_speed: {fileID: 464755799}
   score_controller: {fileID: 1264175311}
 --- !u!4 &775036060
