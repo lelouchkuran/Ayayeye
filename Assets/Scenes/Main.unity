@@ -1544,7 +1544,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: d780874b2cc5aa142b10a6874920b59b, type: 3}
   - {fileID: 100000, guid: 997d396a1c670924d91e4f2a1c532bba, type: 3}
   - {fileID: 100000, guid: d156cb58f303552458197e7290c6838d, type: 3}
-  c: {r: 1, g: 1, b: 1, a: 1}
+  c: {r: 0.35388383, g: 0.97794116, b: 0.10786115, a: 1}
 --- !u!4 &179361795
 Transform:
   m_ObjectHideFlags: 0
@@ -5075,9 +5075,9 @@ MonoBehaviour:
   CoverCD: 0
   CoverOffset: -0.75
   dis_mov: 0
-  scale: 10
-  time_come: 0.3
-  time_down: 0.3
+  scale: 2
+  time_come: 0.1
+  time_down: 0.4
   FlashTimes_Right: 1
   FlashPeriod_Right: 0.05
   FlashStay_Right: 0.3
@@ -16172,7 +16172,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2113586749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 25}
+  m_LocalPosition: {x: -1.264, y: -0.119, z: 7.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1939292075}
