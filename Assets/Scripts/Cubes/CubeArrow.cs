@@ -19,9 +19,9 @@ public class CubeArrow : CubeBehavior {
             cover_ins.transform.localPosition = new Vector3(0, 0, Constant.Instance.CoverOffset);
             cover_ins.transform.localRotation = Quaternion.identity;
             BlockBehavior cover = cover_ins.GetComponent<BlockBehavior>() ?? null;
-            if (cover) {
-                cover.OnBirth(1, 1, Random.Range(1, 5));
-            }
+           // if (cover) {
+                //cover.OnBirth(1, 1, Random.Range(1, 5));
+            //}
         }
     }
 
