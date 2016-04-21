@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CubeGenerator : MonoBehaviour {
 	public bool no_words;
+	public bool no_continue;
 	public GameObject[] neighbors;
 
 	public UseLessCubeDirection[] GenerateList;
@@ -14,6 +15,7 @@ public class CubeGenerator : MonoBehaviour {
 	public GameObject cube = null;
 	int generatr_pointer = 0;
 	bool moving = false;
+	GameObject last_generater = null;
 
 	public Shake shake;
 
@@ -77,6 +79,10 @@ public class CubeGenerator : MonoBehaviour {
 		}
 	}
 
+	public void SetLast(GameObject _obj) {
+		last_generater = _obj;
+	}
+
 	int GetDirection() {
 		if (generatr_pointer < GenerateList.Length) {
 			generatr_pointer += 1;
@@ -84,6 +90,10 @@ public class CubeGenerator : MonoBehaviour {
 		}
 
 		// TODO
-		return Random.Range (0, 5);
+		int dir = Random.Range (0, 5);
+		while (dir != 0 && neighbors[4 - dir] == last_generater) {
+			dir = Random.Range (0, 5);
+		}
+		return dir;
 	}
 }

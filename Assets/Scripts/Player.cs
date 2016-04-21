@@ -82,6 +82,7 @@ public class Player : MonoBehaviour {
 
 	public void SwitchG(GameObject next_generator) {
 		generator_now.SetMoving (false);
+		next_generator.GetComponent<CubeGenerator> ().SetLast (generator_now.gameObject);
 		generator_now = next_generator.GetComponent<CubeGenerator>();
 		generator_now.SetMoving (true);
 		cube_now = generator_now.cube.GetComponent<CubeBehavior>();
