@@ -7,7 +7,7 @@ public class Player : MonoBehaviour {
 	public Level level;
 	public TunnelFlashController tunnels;
 
-    public CubeGenerator generator_now = null;
+    CubeGenerator generator_now = null;
 	CubeBehavior cube_now = null;
 	GameObject target = null;
 

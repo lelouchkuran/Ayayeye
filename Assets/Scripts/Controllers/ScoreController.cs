@@ -109,7 +109,7 @@ public class ScoreController : MonoBehaviour {
         {
             _currentMultiplier = 0;
             //Debug.Log("iafhoaifh " + playerObject.GetComponent<Player>().generator_now.name);
-            currentParticle = playerObject.GetComponent<Player>().generator_now.transform.GetChild(1).gameObject as GameObject;
+            currentParticle = playerObject.GetComponent<Player>().GeneratorNow().transform.GetChild(1).gameObject as GameObject;
             currentParticle.SetActive(true);
             foreach (Transform eachParticle in currentParticle.transform)
             {
