@@ -18,6 +18,7 @@ public class BlockBehavior : MonoBehaviour {
     bool initialized = false;
     int num_row, num_col, num_layer;
     static Transform target;
+    static VFXHub vfx_hub;
 
     void Start () {
         target = FindObjectOfType<Cardboard>().transform;
@@ -40,6 +41,7 @@ public class BlockBehavior : MonoBehaviour {
             xy_off = Constant.Instance.CoverStepL;
             cd = Constant.Instance.CoverCD;
             z_off = Constant.Instance.CoverOffset;
+            vfx_hub = VFXHub.Instance;
             num_col = col;
             num_row = row;
             num_layer = layer;
@@ -86,9 +88,16 @@ public class BlockBehavior : MonoBehaviour {
                     if (blocks[i + j * num_col].id == id) {
                         istriggered = true;
                         layers[i + j * num_col]--;
-                        if (layers[i + j * num_col] == 0) 
+                        if (layers[i + j * num_col] == 0)
                             Destroy(covers[i + j * num_col]);
                         timestamp = Time.time;
+                        Debug.Log("caonima");
+                        vfx_hub.PlayRight(blocks[i + j * num_col].button.transform);
+                        vfx_hub.TunnelSwipe();
+                    }
+                    else {
+                        Debug.Log("ganniba");
+                        vfx_hub.PlayWrong(blocks[i + j * num_col].button.transform);
                     }
                 }
             }
@@ -113,13 +122,12 @@ public class BlockBehavior : MonoBehaviour {
         block.button = Instantiate(models[index]);
         block.id = index;
         block.button.transform.parent = gameObject.transform;
-        block.button.transform.LookAt(target);
+        block.button.transform.localRotation = Quaternion.identity;
         block.button.transform.localPosition = new Vector3(xy_off * (col - (num_col - 1) * 0.5f), xy_off * (row - (num_row - 1) * 0.5f), z_off);
     }
 
     void DestroyBlock (Block block) {
         if (block.id != -1) {
-            GameObject.Find("FeedbackController").GetComponent<FeedbackController>().playRightFeedback(block.button.transform);
             block.id = -1;
             Destroy(block.button);
         }
