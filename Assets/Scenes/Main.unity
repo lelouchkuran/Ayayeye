@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
-  m_SkyboxMaterial: {fileID: 2100000, guid: 79f9d1b3f6096f3438a1d68dbe1df483, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 91d1559e9972fee478406dd80ab0430d, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -3100,6 +3100,7 @@ MonoBehaviour:
   FacingPoint: {fileID: 713461420}
   level: {fileID: 775036059}
   tunnels: {fileID: 1261523877}
+  generator_now: {fileID: 0}
 --- !u!4 &348036918
 Transform:
   m_ObjectHideFlags: 0
@@ -7432,6 +7433,18 @@ MeshFilter:
 GameObject:
   m_PrefabParentObject: {fileID: 184828, guid: 0694c99baba51204996e6c6938d0792e, type: 2}
   m_PrefabInternal: {fileID: 761120720}
+--- !u!114 &899583100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 899583099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baab148c09a424c4ea2014080a5de23a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plyr: {fileID: 0}
 --- !u!4 &899583101 stripped
 Transform:
   m_PrefabParentObject: {fileID: 492410, guid: 0694c99baba51204996e6c6938d0792e, type: 2}
@@ -7566,7 +7579,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -7588,7 +7601,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!1 &909876044
 GameObject:
   m_ObjectHideFlags: 0
@@ -9836,10 +9849,13 @@ MonoBehaviour:
   wrongMaterial: {fileID: 0}
   totalScore: 0
   multiplier: 12
+  playerObject: {fileID: 0}
   scoreGameObject: {fileID: 1786074520}
   num_generator: {fileID: 179361794}
   score_generate: {fileID: 2113586749}
   score_target: {fileID: 266809070}
+  particleSystemArray: []
+  bonusMultiplier: 4
 --- !u!1 &1280180685 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 998395fde6b4c9d4b93dbc1ba90ea86c, type: 3}
@@ -10761,6 +10777,18 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 492410, guid: 0694c99baba51204996e6c6938d0792e, type: 2}
   m_PrefabInternal: {fileID: 1955036243}
+--- !u!114 &1416727992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1416727990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d6ac1888a999843a9d03d650b4aa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plyr: {fileID: 0}
 --- !u!1 &1417418296
 GameObject:
   m_ObjectHideFlags: 0
