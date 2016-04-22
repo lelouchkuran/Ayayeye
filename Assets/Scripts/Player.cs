@@ -38,7 +38,7 @@ public class Player : MonoBehaviour {
 		float angle_next = Vector3.Angle (FacingPoint.transform.position, target.transform.position);
 
 		if (angle_next < Constant.Instance.AngleTurn || (angle_now > 90 - Constant.Instance.AngleTurn && angle_next < 40)) {
-			Right ();
+			Right (false);
         }
         else {
 			for (int i = 0; i < 4; ++i) {
@@ -58,7 +58,7 @@ public class Player : MonoBehaviour {
 		tunnels.Wrong ();
 	}
 
-	public void Right() {
+	public void Right(bool is_press) {
 		cube_now.Finish (true);
         // right people effect
 		tunnels.Right ();
@@ -68,7 +68,7 @@ public class Player : MonoBehaviour {
 		else {
 			NSwitch();
 		}
-		level.Right ();
+		level.Right (is_press);
 	}
 
 	public void Wrong(GameObject next_generator) {

@@ -5,6 +5,7 @@ using System;
 public class InputController : MonoBehaviour {
 
     public Texture pressedMaterial;
+    public Texture correctMaterial;
     public Texture unpressedMaterial;
 
 	// Use this for initialization
