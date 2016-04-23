@@ -75,10 +75,10 @@ public class ScoreController : MonoBehaviour {
         {
             scoreForRound = (worstTime - timeTaken) * 2;
             totalScore -= (int)scoreForRound;
+			scoreGameObject.GetComponent<ScoreShow>().Change(totalScore);
         }
 
         _startTime = previousTime;
 
-        scoreGameObject.GetComponent<ScoreShow>().Change(totalScore);
     }
 }

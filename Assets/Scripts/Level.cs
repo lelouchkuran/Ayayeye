@@ -51,7 +51,9 @@ public class Level : MonoBehaviour {
 		Debug.Log("R! ");
 		score_controller.setGrid(count, true);
 		score_controller.setScore(true, Time.time);
-		Finish ();
+		if (!is_press) {
+			Finish ();
+		}
 		rolling_speed.Right ();
 		vfx.TunnelSwipe ();
 	}

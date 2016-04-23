@@ -4,10 +4,12 @@ using System.Collections;
 public class NumGenerator : MonoBehaviour {
 	public GameObject[] digits;
 	public Color c;
+	public GameObject particle;
+	public ScoreShow score;
 
 	void Start() {
 		//c = Color.white;
-		c.a = 0;
+		c.a = 1;
 	}
 
 	public void Generate(int num, Vector3 pos, GameObject father) {
@@ -15,6 +17,7 @@ public class NumGenerator : MonoBehaviour {
 			Debug.Log("score less or equal to zero");
 			return ;
 		}
+		int num0 = num;
 
 		GameObject new_holder = new GameObject("score");
 		new_holder.transform.position = pos;
@@ -32,7 +35,12 @@ public class NumGenerator : MonoBehaviour {
 		}
 		new_holder.transform.LookAt(Vector3.zero);
 		new_holder.transform.parent = father.transform;
+		GameObject trail = Instantiate (particle);
+		trail.transform.parent = new_holder.transform;
+		trail.transform.localPosition = Vector3.zero;
+		trail.transform.localScale = Vector3.one;
 		new_holder.AddComponent<Poping>();
+		new_holder.GetComponent<Poping> ().Set (score, num0);
 		new_holder.GetComponent<Poping>().Pop();
 	}
 
