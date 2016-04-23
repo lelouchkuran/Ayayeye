@@ -6189,25 +6189,25 @@ MonoBehaviour:
   - oppo_ratio: 0
     word_ratio: .5
     cover_ratio: 0
-    cover_all_ratio: 0
+    shape_ratio: .200000003
     speed_range: {x: 1.5, y: 2}
     turn_num: 8
   - oppo_ratio: .349999994
     word_ratio: .5
     cover_ratio: 0
-    cover_all_ratio: 0
+    shape_ratio: .200000003
     speed_range: {x: 2, y: 2.5}
     turn_num: 10
   - oppo_ratio: .5
     word_ratio: .5
     cover_ratio: .5
-    cover_all_ratio: 0
+    shape_ratio: .200000003
     speed_range: {x: 2.5, y: 2.75}
     turn_num: 6
   - oppo_ratio: .5
     word_ratio: .5
     cover_ratio: .800000012
-    cover_all_ratio: .5
+    shape_ratio: .200000003
     speed_range: {x: 2.75, y: 3}
     turn_num: 6
   rolling_speed: {fileID: 464755799}
