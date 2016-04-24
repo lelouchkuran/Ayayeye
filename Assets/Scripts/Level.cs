@@ -66,7 +66,7 @@ public class Level : MonoBehaviour {
 	public void Right(bool is_press) {
         count++;
 		Debug.Log("R! ");
-		score_controller.setGrid(count, true);
+		//score_controller.setGrid(count, true);
 		score_controller.setScore(true, Time.time);
 		if (!is_press) {
 			Finish ();
@@ -79,7 +79,7 @@ public class Level : MonoBehaviour {
 	public void Wrong() {
         count++;
 		Debug.Log("W!");
-		score_controller.setGrid(count, false);
+		// score_controller.setGrid(count, false);
 		score_controller.setScore(false, Time.time);
         Finish();
 		rolling_speed.Wrong ();
