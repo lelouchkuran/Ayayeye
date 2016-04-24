@@ -35,6 +35,8 @@ public class Level : MonoBehaviour {
 		return (Random.Range(0.0f, 1.0f) < levels[p].oppo_ratio);
 	}
 
+/*
+ * this is for cover type at first, but no more cover type now
 	public int CoverInfo() {
 		// 0 no voer, 1 all cover, 2 line cover -, 3 line cover |
 		if (Random.Range (0.0f, 1.0f) < levels [p].cover_ratio) {
@@ -45,6 +47,20 @@ public class Level : MonoBehaviour {
 			}
 		}
 		return 0;
+	}
+*/
+	public bool IsCover() {
+		if (Random.Range (0.0f, 1.0f) < levels [p].cover_ratio) {
+			return true;
+		}
+		return false;
+	}
+
+	public bool IsShape() {
+		if (Random.Range (0.0f, 1.0f) < levels [p].shape_ratio) {
+			return true;
+		}
+		return false;
 	}
 
 	public void Right(bool is_press) {
@@ -100,7 +116,7 @@ public class BaseLevel {
 	public float oppo_ratio;
 	public float word_ratio;
 	public float cover_ratio;
-	public float cover_all_ratio;
+	public float shape_ratio;
 	public Vector2 speed_range;
 	public int turn_num;
 }

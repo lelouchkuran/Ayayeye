@@ -90,9 +90,12 @@ public class CubeGenerator : MonoBehaviour {
 		}
 
 		// TODO
-		int dir = Random.Range (0, 5);
-		while (dir != 0 && neighbors[4 - dir] == last_generater) {
-			dir = Random.Range (0, 5);
+		if (level.IsShape ()) {
+			return 0;
+		}
+		int dir = Random.Range (1, 5);
+		while (neighbors[4 - dir] == last_generater) {
+			dir = Random.Range (1, 5);
 		}
 		return dir;
 	}
