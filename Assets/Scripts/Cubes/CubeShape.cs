@@ -20,8 +20,9 @@ public class CubeShape : CubeBehavior {
 		} else if (Input.anyKeyDown){
             // TODO: button press wrong
             VFXHub.Instance.PlayWrong(transform);
-		}
-	}
+            SFXHub.Instance.playWrongSound();
+        }
+    }
 
 	public override void SetInfo(int _dir, int _dir_show, bool _word) {
 		base.SetInfo (_dir, _dir_show, _word);

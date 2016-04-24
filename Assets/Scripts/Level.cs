@@ -15,6 +15,7 @@ public class Level : MonoBehaviour {
 	public TunnelOffsetSpeedController rolling_speed;
 	public ScoreController score_controller;
 	public VFXHub vfx;
+    public SFXHub sfx;
 
     // Use this for initialization
     void Awake () {
@@ -56,7 +57,8 @@ public class Level : MonoBehaviour {
 		}
 		rolling_speed.Right ();
 		vfx.TunnelSwipe ();
-	}
+        sfx.changePitch(PitchClass.Pitch.IncreasePitch);
+    }
 
 	public void Wrong() {
         count++;
@@ -65,9 +67,10 @@ public class Level : MonoBehaviour {
 		score_controller.setScore(false, Time.time);
         Finish();
 		rolling_speed.Wrong ();
-	}
+        sfx.changePitch(PitchClass.Pitch.ReducePitch);
+    }
 
-	void Finish() {
+    void Finish() {
 		turns -= 1;
 		if (turns == 0) {
 			p += 1;
