@@ -4983,6 +4983,7 @@ MonoBehaviour:
   ShakeTime: 1
   ShakeRange: 5
   SpeedIncForOffset: .00999999978
+  ScoreBase: 10
   ArrowPrefab: {fileID: 187244, guid: de66b6df6c7dc9948abaa9d778fcf46a, type: 2}
   DirPrefab:
   - {fileID: 167830, guid: 322e4da4e4be64c4c96dbf0177619a83, type: 2}
@@ -6077,7 +6078,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11450242, guid: 0694c99baba51204996e6c6938d0792e, type: 2}
       propertyPath: GenerateList.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 492410, guid: 0694c99baba51204996e6c6938d0792e, type: 2}
       propertyPath: m_LocalPosition.x
@@ -9854,10 +9855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536efd43d16af734a8eefbc909839c73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightMaterial: {fileID: 0}
-  wrongMaterial: {fileID: 0}
   totalScore: 0
-  multiplier: 12
   scoreGameObject: {fileID: 1786074520}
   num_generator: {fileID: 179361794}
   score_generate: {fileID: 2113586749}

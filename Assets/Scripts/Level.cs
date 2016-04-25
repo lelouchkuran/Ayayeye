@@ -72,7 +72,7 @@ public class Level : MonoBehaviour {
         count++;
 		Debug.Log("R! ");
 		//score_controller.setGrid(count, true);
-		score_controller.setScore(true, Time.time);
+		score_controller.setScore(true, p);
 		if (!is_press) {
 			Finish ();
 		}
@@ -85,7 +85,7 @@ public class Level : MonoBehaviour {
         count++;
 		Debug.Log("W!");
 		// score_controller.setGrid(count, false);
-		score_controller.setScore(false, Time.time);
+		score_controller.setScore(false, p);
         Finish();
 		rolling_speed.Wrong ();
         sfx.changePitch(PitchClass.Pitch.ReducePitch);
@@ -95,9 +95,6 @@ public class Level : MonoBehaviour {
 		turns -= 1;
 		if (turns == 0) {
 			p += 1;
-
-
-
 			if (p >= levels.Length) {
 				p = levels.Length - 1;
 				Debug.Log("END!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
