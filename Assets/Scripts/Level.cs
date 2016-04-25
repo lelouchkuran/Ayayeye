@@ -23,6 +23,11 @@ public class Level : MonoBehaviour {
 		turns = levels [p].turn_num;
     }
 
+    public int currentLevel ()
+    {
+        return p;
+    }
+
 	public float GetSpeed() {
 		return levels [p].speed_range.x + (levels [p].speed_range.y - levels [p].speed_range.x) * (turns / levels [p].turn_num);
 	}
@@ -90,6 +95,9 @@ public class Level : MonoBehaviour {
 		turns -= 1;
 		if (turns == 0) {
 			p += 1;
+
+
+
 			if (p >= levels.Length) {
 				p = levels.Length - 1;
 				Debug.Log("END!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");

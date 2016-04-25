@@ -8040,7 +8040,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reduce: 0
   clips:
-  - {fileID: 8300000, guid: ef060e8153f7470409e39c94acaee642, type: 3}
+  - {fileID: 8300000, guid: d68b53b39a238af40aaf8a914dd074e9, type: 3}
+  - {fileID: 8300000, guid: a0f7b016d3c693549a36a04c795c2229, type: 3}
+  - {fileID: 8300000, guid: 39b6e5325134df34795a94b208960d91, type: 3}
+  - {fileID: 8300000, guid: 6e54a1f8a4658e54490a6e9efc5b92bc, type: 3}
+  - {fileID: 8300000, guid: a5a60ed9a5deef34cb8f03682543c555, type: 3}
+  - {fileID: 8300000, guid: 2c27ad33c01f5bb4b8c49c1750d1d38e, type: 3}
 --- !u!82 &982626190
 AudioSource:
   m_ObjectHideFlags: 0

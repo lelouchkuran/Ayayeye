@@ -17,7 +17,9 @@ public class CubeShape : CubeBehavior {
 		if (Input.GetKeyDown (key)) {
 			GameObject.Find ("Player").GetComponent<Player> ().Right (true);
             VFXHub.Instance.PlayRight(transform);
-		} else if (Input.anyKeyDown){
+            SFXHub.Instance.playRightSound();
+        }
+        else if (Input.anyKeyDown){
             // TODO: button press wrong
             VFXHub.Instance.PlayWrong(transform);
             SFXHub.Instance.playWrongSound();
