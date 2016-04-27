@@ -14,11 +14,18 @@ public class Level : MonoBehaviour {
 
 	public TunnelOffsetSpeedController rolling_speed;
 	public ScoreController score_controller;
+	public VFXHub vfx;
+    public SFXHub sfx;
 
     // Use this for initialization
     void Awake () {
 		p = 0;
 		turns = levels [p].turn_num;
+    }
+
+    public int currentLevel ()
+    {
+        return p;
     }
 
 	public float GetSpeed() {
@@ -33,6 +40,8 @@ public class Level : MonoBehaviour {
 		return (Random.Range(0.0f, 1.0f) < levels[p].oppo_ratio);
 	}
 
+/*
+ * this is for cover type at first, but no more cover type now
 	public int CoverInfo() {
 		// 0 no voer, 1 all cover, 2 line cover -, 3 line cover |
 		if (Random.Range (0.0f, 1.0f) < levels [p].cover_ratio) {
@@ -44,26 +53,45 @@ public class Level : MonoBehaviour {
 		}
 		return 0;
 	}
+*/
+	public bool IsCover() {
+		if (Random.Range (0.0f, 1.0f) < levels [p].cover_ratio) {
+			return true;
+		}
+		return false;
+	}
+
+	public bool IsShape() {
+		if (Random.Range (0.0f, 1.0f) < levels [p].shape_ratio) {
+			return true;
+		}
+		return false;
+	}
 
 	public void Right(bool is_press) {
         count++;
 		Debug.Log("R! ");
-		score_controller.setGrid(count, true);
-		score_controller.setScore(true, Time.time);
-		Finish ();
+		//score_controller.setGrid(count, true);
+		score_controller.setScore(true, p);
+		if (!is_press) {
+			Finish ();
+		}
 		rolling_speed.Right ();
-	}
+		vfx.TunnelSwipe ();
+        sfx.changePitch(PitchClass.Pitch.IncreasePitch);
+    }
 
 	public void Wrong() {
         count++;
 		Debug.Log("W!");
-		score_controller.setGrid(count, false);
-		score_controller.setScore(false, Time.time);
+		// score_controller.setGrid(count, false);
+		score_controller.setScore(false, p);
         Finish();
 		rolling_speed.Wrong ();
-	}
+        sfx.changePitch(PitchClass.Pitch.ReducePitch);
+    }
 
-	void Finish() {
+    void Finish() {
 		turns -= 1;
 		if (turns == 0) {
 			p += 1;
@@ -93,7 +121,7 @@ public class BaseLevel {
 	public float oppo_ratio;
 	public float word_ratio;
 	public float cover_ratio;
-	public float cover_all_ratio;
+	public float shape_ratio;
 	public Vector2 speed_range;
 	public int turn_num;
 }

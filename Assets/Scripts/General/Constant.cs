@@ -36,6 +36,8 @@ public class Constant : Singleton<Constant> {
 
 	public float SpeedIncForOffset;
 
+	public int ScoreBase;
+
     #region prefabs
     public GameObject ArrowPrefab;
 	public GameObject[] DirPrefab;

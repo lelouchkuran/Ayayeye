@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class Poping : MonoBehaviour {
-	
+	int score_num;
+	ScoreShow score;
 	Color c;
 	// Use this for initialization
 	void Start () {
@@ -13,6 +14,10 @@ public class Poping : MonoBehaviour {
 	
 	}
 
+	public void Set(ScoreShow _score, int _num) {
+		score = _score;
+		score_num = _num;
+	}
 	public void Pop() {
 		StartCoroutine (coPop ());
 	}
@@ -32,6 +37,7 @@ public class Poping : MonoBehaviour {
 
 		Vector3 pos = transform.position;
 		GameObject goa_obj = GameObject.Find("score");
+		transform.FindChild("yellow star(Clone)").gameObject.GetComponent<ParticleSystem>().Play();
 		c.a = 1;
 
 		for (float rest_time = 0; rest_time < Constant.Instance.time_down; rest_time += 0.01f) {
@@ -53,7 +59,8 @@ public class Poping : MonoBehaviour {
 			son.gameObject.GetComponent<Renderer>().material.color = c;
 		}
 
+		transform.FindChild("yellow star(Clone)").transform.parent = null;
+		score.Add (score_num);
 		Destroy (gameObject);
-
 	}
 }

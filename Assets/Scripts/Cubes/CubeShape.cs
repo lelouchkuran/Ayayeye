@@ -16,11 +16,15 @@ public class CubeShape : CubeBehavior {
 			return;
 		if (Input.GetKeyDown (key)) {
 			GameObject.Find ("Player").GetComponent<Player> ().Right (true);
-		} else if (Input.anyKeyDown){
-			// TODO: button press wrong
-
-		}
-	}
+            VFXHub.Instance.PlayRight(transform);
+            SFXHub.Instance.playRightSound();
+        }
+        else if (Input.anyKeyDown){
+            // TODO: button press wrong
+            VFXHub.Instance.PlayWrong(transform);
+            SFXHub.Instance.playWrongSound();
+        }
+    }
 
 	public override void SetInfo(int _dir, int _dir_show, bool _word) {
 		base.SetInfo (_dir, _dir_show, _word);
