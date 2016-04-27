@@ -121,6 +121,8 @@ public class ScoreController : MonoBehaviour {
 
         _startTime = previousTime;
 
+        PlayerPrefs.SetInt("score", totalScore);
+
         scoreGameObject.GetComponent<ScoreShow>().Change(totalScore);
     }
 }

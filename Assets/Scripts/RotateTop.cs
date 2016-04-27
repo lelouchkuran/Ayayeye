@@ -18,7 +18,7 @@ public class RotateTop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (plyr.GetComponent<Player>().generator_now.name == "up")
+        if (plyr.GetComponent<Player>().GeneratorNow().name == "up")
         {
         }
         else{

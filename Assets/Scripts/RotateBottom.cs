@@ -15,7 +15,7 @@ public class RotateBottom : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (plyr.GetComponent<Player>().generator_now.name == "down")
+        if (plyr.GetComponent<Player>().GeneratorNow().name == "down")
         {
         }
         else {

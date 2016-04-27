@@ -7,9 +7,10 @@ public class EndScreenScore : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Debug.Log("value    " + PlayerPrefs.GetInt("score"));
 
-        int num = GameObject.Find("ScoreController").GetComponent<ScoreController>().totalScore;
-
+        //int num = GameObject.Find("ScoreController").GetComponent<ScoreController>().totalScore;
+        int num = PlayerPrefs.GetInt("score");
         GameObject new_holder = new GameObject("score");
         new_holder.transform.position = Vector3.zero;
         new_holder.transform.LookAt(Vector3.zero);
