@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class NumGenerator : MonoBehaviour {
+    public GameObject holder;
 	public GameObject[] digits;
 	public Color c;
 	public GameObject particle;
@@ -19,7 +20,7 @@ public class NumGenerator : MonoBehaviour {
 		}
 		int num0 = num;
 
-		GameObject new_holder = new GameObject("score");
+		GameObject new_holder = Instantiate(holder);
 		new_holder.transform.position = pos;
 		new_holder.transform.localScale = Vector3.zero;
 
