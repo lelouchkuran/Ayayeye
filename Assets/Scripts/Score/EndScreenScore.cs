@@ -7,7 +7,7 @@ public class EndScreenScore : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Debug.Log("value    " + PlayerPrefs.GetInt("score"));
+        //Debug.Log("value    " + PlayerPrefs.GetInt("score"));
 
         //int num = GameObject.Find("ScoreController").GetComponent<ScoreController>().totalScore;
         int num = PlayerPrefs.GetInt("score");

@@ -1502,6 +1502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 922ddad1be65995468c9c3484393ea5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  holder: {fileID: 139064, guid: 90a38a54ed14e894bbc3401fac728fc2, type: 2}
   digits:
   - {fileID: 100000, guid: c345c90e66866a54e90dbcaad4f24d1a, type: 3}
   - {fileID: 100000, guid: 4f07d7ba9227d4642981ba27a0c387a7, type: 3}
@@ -4962,7 +4963,7 @@ MonoBehaviour:
   CubeGenerateDis: 20
   CubeMissDis: 2
   AngleTurn: 25
-  NormalColor: {r: 0, g: .733333349, b: 1, a: 1}
+  NormalColor: {r: .353883833, g: .977941155, b: .107861146, a: 1}
   OpposiColor: {r: 1, g: 0, b: 0, a: 1}
   CoverStepL: .449999988
   CoverCD: 0
