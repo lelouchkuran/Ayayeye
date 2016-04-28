@@ -68,5 +68,7 @@ public class ScoreController : MonoBehaviour {
 			totalScore -= score_now;
 			scoreGameObject.GetComponent<ScoreShow>().Change(totalScore);
         }
+
+        PlayerPrefs.SetInt("score", totalScore);
     }
 }

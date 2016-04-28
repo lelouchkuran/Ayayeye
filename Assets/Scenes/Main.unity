@@ -11413,6 +11413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pressedMaterial: {fileID: 2800000, guid: d6185d6cdf19df349a1c89dd6497bfd7, type: 3}
+  correctMaterial: {fileID: 0}
   unpressedMaterial: {fileID: 2800000, guid: 73fad0ce2462ce848aed9e2c8e9e463e, type: 3}
 --- !u!1 &1515961637
 GameObject:
@@ -12471,6 +12472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pressedMaterial: {fileID: 2800000, guid: 1722e3dd8ddbb2242b682f410e0fc615, type: 3}
+  correctMaterial: {fileID: 0}
   unpressedMaterial: {fileID: 2800000, guid: f8c3839d87936174a8b5e70a31c4f3fc, type: 3}
 --- !u!1 &1676747265
 GameObject:
