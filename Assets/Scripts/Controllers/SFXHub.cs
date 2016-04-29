@@ -14,7 +14,7 @@ public class PitchClass
 public class SFXHub : Singleton<SFXHub>
 {
     private Player _player;
-    private Level _level;
+    private LevelBase _level;
     public PitchClass.Pitch reduce;
 
     public AudioClip[] clips;
@@ -22,7 +22,7 @@ public class SFXHub : Singleton<SFXHub>
     // Use this for initialization
     void Start () {
         _player = FindObjectOfType<Player>().GetComponent<Player>();
-        _level = FindObjectOfType<Level>().GetComponent<Level>();
+        _level = FindObjectOfType<LevelBase>().GetComponent<LevelBase>();
         reduce = PitchClass.Pitch.ConstantPitch;
     }
 

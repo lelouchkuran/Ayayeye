@@ -67,7 +67,9 @@ public class ScoreShow: MonoBehaviour {
 	public void Change(int new_score) {
 		if (_waiting > 0)
 			return;
-
+		if (new_score < 0) {
+			new_score = 0;
+		}
 		// dir to move
 		bool dir = new_score - _score < 0;
 		

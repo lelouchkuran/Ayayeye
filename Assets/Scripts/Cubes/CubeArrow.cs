@@ -6,7 +6,7 @@ public class CubeArrow : CubeBehavior {
 
     // Use this for initialization
     void Start () {
-		if (GameObject.Find("Level").GetComponent<Level>().IsCover()) {
+		if (GameObject.Find("Level").GetComponent<LevelBase>().IsCover()) {
             // generate cover in cover_shape
             GameObject cover_ins = Instantiate(cover_prefab);
             cover_ins.transform.parent = transform;

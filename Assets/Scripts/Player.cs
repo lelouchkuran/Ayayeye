@@ -4,7 +4,7 @@ using System.Collections;
 public class Player : MonoBehaviour {
 	public GameObject StartGenerator;
 	public GameObject FacingPoint;
-	public Level level;
+	public LevelBase level;
 	public TunnelFlashController tunnels;
 
     CubeGenerator generator_now = null;

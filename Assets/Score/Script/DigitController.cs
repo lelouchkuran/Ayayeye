@@ -19,6 +19,11 @@ public class DigitController : MonoBehaviour {
 	
 	}
 
+	public void ChangeColor(Color _c) {
+		_c.a = c.a;
+		c = _c;
+	}
+
 	public void ChangeTo(GameObject newobj, Color color, bool dir = true) {
 		c = color;
 		c.a = 0;
