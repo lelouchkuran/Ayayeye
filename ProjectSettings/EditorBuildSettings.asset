@@ -11,3 +11,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
   - enabled: 1
     path: Assets/Scenes/End.unity
+  - enabled: 1
+    path: Assets/Scenes/TimeMode.unity
