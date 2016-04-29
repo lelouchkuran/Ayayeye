@@ -4,6 +4,9 @@ using System.Collections;
 public class LevelBase : MonoBehaviour {
 
     public BaseLevel[] levels;
+	public GameObject tutorialObj;
+	public string[] tutorialText;
+	public int[] tutorialTimes;
     protected int turns;
 
     public TunnelOffsetSpeedController rolling_speed;
@@ -12,6 +15,7 @@ public class LevelBase : MonoBehaviour {
     public SFXHub sfx;
     public delegate void LevelUp ();
     public event LevelUp LevelUpHandler;
+
     virtual public int currentLevel () {
         return 0;
     }
@@ -58,6 +62,21 @@ public class LevelBase : MonoBehaviour {
     virtual protected void Finish () {
         turns -= 1;
     }
+
+	public GameObject Tutorial(int index) {
+		if (index > 2) {
+			Debug.Log("Wrong type for tutorial");
+			return null;
+		}
+		if (tutorialTimes [index] <= 0) {
+			return null;
+		}
+
+		tutorialTimes [index] -= 1;
+		GameObject tutorial_obj = Instantiate (tutorialObj);
+		tutorial_obj.GetComponent<TextMesh> ().text = tutorialText [index];
+		return tutorial_obj;
+	}
 
     protected void OnLevelUp () {
         if (LevelUpHandler != null)
