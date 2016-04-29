@@ -77,7 +77,7 @@ public class VFXHub : Singleton<VFXHub> {
         float move = 2 * Mathf.PI / 60;
         for (float i = -1; i <= 1; i += 0.66f) {
             for (float theta = 0; theta < 2 * Mathf.PI; theta += move) {
-                Vector3 pos = new Vector3(radius * Mathf.Cos(theta), radius * i, radius * Mathf.Sin(theta));
+                Vector3 pos = new Vector3(radius * Mathf.Cos(theta), radius * i * 1.5f, radius * Mathf.Sin(theta));
                 GameObject obj = (GameObject)Instantiate(flow_unit, pos, Quaternion.identity);
                 obj.transform.LookAt(Vector3.zero);
                 obj.transform.parent = transform;
