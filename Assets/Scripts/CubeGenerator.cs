@@ -10,7 +10,7 @@ public class CubeGenerator : MonoBehaviour {
 
 	Vector3[] arrow_rotations;
 
-	public Level level;
+	public LevelBase level;
 
 	public GameObject cube = null;
 	int generatr_pointer = 0;

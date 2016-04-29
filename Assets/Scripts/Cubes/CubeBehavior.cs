@@ -8,7 +8,7 @@ public class CubeBehavior : MonoBehaviour {
     bool flag_word;
     // Use this for initialization
     void Awake () {
-        speed = GameObject.Find("Level").GetComponent<Level>().GetSpeed();
+        speed = GameObject.Find("Level").GetComponent<LevelBase>().GetSpeed();
         transform.localPosition = Vector3.forward * Constant.Instance.CubeGenerateDis;
     }
 
