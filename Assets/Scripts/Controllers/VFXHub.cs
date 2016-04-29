@@ -42,6 +42,7 @@ public class VFXHub : Singleton<VFXHub> {
         if (flag_rot) {
             current_angular = Mathf.SmoothDamp(current_angular, target_angular, ref ref_angular, 0.8f);
             transform.Rotate(new Vector3(0, current_angular * Time.deltaTime, 0));
+            flow_light.color = level_color[level.currentLevel()] * Mathf.Abs(Mathf.Sin(Mathf.PI * Time.time * level.currentLevel()));
         }
     }
 

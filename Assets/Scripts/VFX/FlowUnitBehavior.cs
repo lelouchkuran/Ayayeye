@@ -25,7 +25,7 @@ public class FlowUnitBehavior : MonoBehaviour {
         selfdir = transform.position.normalized;
         dir = Vector3.SmoothDamp(dir, head.transform.position.normalized, ref s_v, 0.3f);
         float factor = Vector3.Dot(dir, selfdir);
-        float wiggle = level.currentLevel() > 1 ? level.currentLevel() * wiggle_mag * Mathf.Sin(Time.time * level.currentLevel() * Mathf.PI - 10 * Mathf.Acos(factor)) : 0;
+        float wiggle = level.currentLevel() > 1 ? level.currentLevel() * wiggle_mag * Mathf.Sin(Time.time * level.currentLevel() * Mathf.PI) : 0;
         factor = Mathf.Clamp01(factor);
         factor = Mathf.Clamp(Mathf.Pow(factor, 2), 0.3f, 1) * (1 + level.currentLevel()) / 2;
         for(int i = 0; i < units.Length; ++i) {
