@@ -93,12 +93,11 @@ public class CubeGenerator : MonoBehaviour {
 		// get tutorial text
 		if (is_shape) {
 			text_obj = level.Tutorial(0);
-		}
-		if (is_shape == false) {
-			text_obj = level.Tutorial(1);
-		}
-		if (is_oppo && text_obj == null) {
-			text_obj = level.Tutorial(2);
+		} else {
+			text_obj = level.Tutorial (1);
+			if (is_oppo && text_obj == null) {
+				text_obj = level.Tutorial (2);
+			}
 		}
 		if (text_obj == null) {
 			return;
