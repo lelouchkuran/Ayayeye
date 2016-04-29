@@ -5,8 +5,10 @@ public class CameraController : MonoBehaviour {
 
     public GameObject exitText;
     public GameObject startText;
+    public GameObject startText2;
 
     bool _isLookingToStart = false;
+    bool _isLookingToStart2 = false;
 
 	// Use this for initialization
 	void Start () {
@@ -16,15 +18,23 @@ public class CameraController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         _isLookingToStart = false;
+        _isLookingToStart2 = false;
 
-        Vector3 exitVector = Camera.main.WorldToViewportPoint(exitText.transform.position);
-        if (exitVector.x > 0 &&
-            exitVector.y > 0 &&
-            exitVector.z > 0)
+        // Second Mode
+        Vector3 startVector2 = Camera.main.WorldToViewportPoint(startText2.transform.position);
+        if (startVector2.x > 0 &&
+            startVector2.y > 0 &&
+            startVector2.z > 0)
         {
-            Application.Quit();
+            _isLookingToStart2 = true;
+            startCountDown(1);
+        }
+        else
+        {
+            GameObject.Find("Countdown2").GetComponent<Animator>().SetTrigger("stopAnimation");
         }
 
+        // First mode
         Vector3 startVector = Camera.main.WorldToViewportPoint(startText.transform.position);
         if (startVector.x > 0 &&
             startVector.y > 0 &&
@@ -32,7 +42,7 @@ public class CameraController : MonoBehaviour {
             !_isLookingToStart)
         {
             _isLookingToStart = true;
-            startCountDown();
+            startCountDown(0);
         }
         else
         {
@@ -40,8 +50,16 @@ public class CameraController : MonoBehaviour {
         }
     }
 
-    void startCountDown ()
+    void startCountDown (int type)
     {
-        GameObject.Find("123").GetComponent<Animator>().SetTrigger("startAnimation");
+        switch (type)
+        {
+            case 0:
+                GameObject.Find("123").GetComponent<Animator>().SetTrigger("startAnimation");
+                break;
+            case 1:
+                GameObject.Find("Countdown2").GetComponent<Animator>().SetTrigger("startAnimation");
+                break;
+        }
     }
 }

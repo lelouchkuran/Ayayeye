@@ -8,15 +8,17 @@ public class LevelController : MonoBehaviour {
     public KeyCode[] buttons;
     public GameObject explosion;
     public GameObject startText;
+    public GameObject startText2;
     public GameObject[] boxes;
     float _speed = 20;
 	// Use this for initialization
 	void Start () {
         startText = GameObject.Find("Start");
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        startText2 = GameObject.Find("Start2");
+    }
+
+    // Update is called once per frame
+    void Update () {
         foreach (GameObject box in boxes)
         {
             box.transform.Rotate(new Vector3(_speed * Time.deltaTime, _speed * Time.deltaTime, _speed * Time.deltaTime), Space.World);
@@ -65,17 +67,30 @@ public class LevelController : MonoBehaviour {
         }
     }
 
-    public void newLevel ()
+    public void newLevel (int level)
     {
-        Application.LoadLevel("Main");
+        switch (level)
+       { 
+            case 0:
+                Application.LoadLevel("Main");
+                break;
+            case 1:
+                Application.LoadLevel("TimeMode");
+                break;
+        }
     }
 
     public void playFirstSound ()
     {
         Vector3 startVector = Camera.main.WorldToViewportPoint(startText.transform.position);
-        if (startVector.x > 0 &&
+        Vector3 startVector2 = Camera.main.WorldToViewportPoint(startText2.transform.position);
+
+        if ((startVector.x > 0 &&
             startVector.y > 0 &&
-            startVector.z > 0)
+            startVector.z > 0) ||
+            (startVector2.x > 0 &&
+            startVector2.y > 0 &&
+            startVector2.z > 0))
         {
             GameObject.Find("SoundManager").GetComponent<SoundController>().playCountdown(0);
         }
@@ -84,9 +99,14 @@ public class LevelController : MonoBehaviour {
     public void playSecondSound()
     {
         Vector3 startVector = Camera.main.WorldToViewportPoint(startText.transform.position);
-        if (startVector.x > 0 &&
+        Vector3 startVector2 = Camera.main.WorldToViewportPoint(startText2.transform.position);
+
+        if ((startVector.x > 0 &&
             startVector.y > 0 &&
-            startVector.z > 0)
+            startVector.z > 0) ||
+            (startVector2.x > 0 &&
+            startVector2.y > 0 &&
+            startVector2.z > 0))
         {
             GameObject.Find("SoundManager").GetComponent<SoundController>().playCountdown(1);
         }
@@ -95,9 +115,14 @@ public class LevelController : MonoBehaviour {
     public void playLastSound()
     {
         Vector3 startVector = Camera.main.WorldToViewportPoint(startText.transform.position);
-        if (startVector.x > 0 &&
+        Vector3 startVector2 = Camera.main.WorldToViewportPoint(startText2.transform.position);
+
+        if ((startVector.x > 0 &&
             startVector.y > 0 &&
-            startVector.z > 0)
+            startVector.z > 0) ||
+            (startVector2.x > 0 &&
+            startVector2.y > 0 &&
+            startVector2.z > 0))
         {
             GameObject.Find("SoundManager").GetComponent<SoundController>().playCountdown(2);
         }
