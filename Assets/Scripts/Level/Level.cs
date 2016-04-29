@@ -3,8 +3,7 @@ using System.Collections;
 
 public class Level : LevelBase {
     // the level_now
-    public delegate void LevelUp ();
-    public event LevelUp LevelUpHandler;
+
     int level_now;
     // Use this for initialization
     void Awake () {
@@ -89,8 +88,7 @@ public class Level : LevelBase {
                 // TODO: finish
 
             }
-            if (LevelUpHandler != null)
-                LevelUpHandler();
+            OnLevelUp();
             turns = levels[level_now].turn_num;
         }
     }

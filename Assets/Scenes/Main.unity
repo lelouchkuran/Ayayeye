@@ -6310,6 +6310,12 @@ MonoBehaviour:
     shape_ratio: .200000003
     speed_range: {x: 2.75, y: 3}
     turn_num: 6
+  tutorialObj: {fileID: 152390, guid: 50b5a322d4145144a90a6a166356f1ef, type: 2}
+  tutorialText:
+  - Press the Button!
+  - Turn your Head!
+  - Red is Opposite!
+  tutorialTimes: 010000000100000001000000
   rolling_speed: {fileID: 464755799}
   score_controller: {fileID: 1264175311}
   vfx: {fileID: 877986496}

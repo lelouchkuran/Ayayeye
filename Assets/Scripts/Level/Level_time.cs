@@ -73,5 +73,6 @@ public class Level_time : LevelBase {
 			// TODO: finish
 
 		}
+        OnLevelUp();
 	}
 }

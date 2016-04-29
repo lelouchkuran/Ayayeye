@@ -10,14 +10,14 @@ public class VFXHub : Singleton<VFXHub> {
     public Material flow_light;
     public Color[] level_color;
     private Player player;
-    private Level level;
+    private LevelBase level;
     private List<GameObject> vfx_list;
     private float target_angular, current_angular, ref_angular;
     private bool flag_rot;
 
     // Use this for initialization
     void Start () {
-        level = GameObject.Find("Level").GetComponent<Level>();
+        level = GameObject.Find("Level").GetComponent<LevelBase>();
         player = FindObjectOfType<Player>().GetComponent<Player>();
         vfx_list = new List<GameObject>();
         FlowGenerate();
@@ -74,11 +74,14 @@ public class VFXHub : Singleton<VFXHub> {
 
     // Use this for initialization
     void FlowGenerate () {
+        const float fix_radius = 600;
         float radius = 600;
         float move = 2 * Mathf.PI / 60;
         for (float i = -1; i <= 1; i += 0.66f) {
+            radius = Mathf.Sqrt(1.2f * 1.2f - i * i) * fix_radius;
+            move = 2 * Mathf.PI / radius * 10;
             for (float theta = 0; theta < 2 * Mathf.PI; theta += move) {
-                Vector3 pos = new Vector3(radius * Mathf.Cos(theta), radius * i * 1.5f, radius * Mathf.Sin(theta));
+                Vector3 pos = new Vector3(radius * Mathf.Cos(theta), radius * i * 1.2f, radius * Mathf.Sin(theta));
                 GameObject obj = (GameObject)Instantiate(flow_unit, pos, Quaternion.identity);
                 obj.transform.LookAt(Vector3.zero);
                 obj.transform.parent = transform;
@@ -87,10 +90,13 @@ public class VFXHub : Singleton<VFXHub> {
     }
 
     void LevelUp () {
+        int currentlevel = level.currentLevel();
+        if (currentlevel >= level_color.Length)
+            currentlevel = level_color.Length - 1;
         flow_light.color = level_color[level.currentLevel()];
-        if (level.currentLevel() > 1) {
+        if (currentlevel > 1) {
             flag_rot = true;
-            target_angular = -Mathf.Sign(target_angular) * 10.0f * level.currentLevel();
+            target_angular = -Mathf.Sign(target_angular) * 10.0f * currentlevel;
         }
     }
 }
