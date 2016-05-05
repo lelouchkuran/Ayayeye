@@ -1319,7 +1319,7 @@ MonoBehaviour:
     shape_ratio: .200000003
     speed_range: {x: 2.75, y: 3}
     turn_num: 10
-  tutorialObj: {fileID: 0}
+  tutorialObj: {fileID: 152390, guid: 50b5a322d4145144a90a6a166356f1ef, type: 2}
   tutorialText:
   - Press the Button!
   - Tuen your Head

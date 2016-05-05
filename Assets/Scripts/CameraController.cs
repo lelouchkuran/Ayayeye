@@ -38,7 +38,7 @@ public class CameraController : MonoBehaviour {
         Vector3 startVector = Camera.main.WorldToViewportPoint(startText.transform.position);
         if (startVector.x > 0 &&
             startVector.y > 0 &&
-            startVector.z > 0 &&
+            startVector.z > 28 &&
             !_isLookingToStart)
         {
             _isLookingToStart = true;

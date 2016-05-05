@@ -36,7 +36,7 @@ public class LevelController : MonoBehaviour {
 
             if (Application.loadedLevel == 2)
             {
-                Application.LoadLevel("Main");
+                Application.LoadLevel("Menu");
             }
             else
             {
